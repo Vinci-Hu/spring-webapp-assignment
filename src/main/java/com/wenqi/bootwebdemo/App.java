@@ -9,7 +9,8 @@ public class App {
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(App.class, args);
-		System.out.println("Running...");
+		Person p1 = context.getBean(Person.class);
+		p1.breathe();
 	}
 
 }
