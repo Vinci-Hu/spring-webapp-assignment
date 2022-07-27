@@ -5,10 +5,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
-public class BootwebdemoApplication {
+public class App {
 
 	public static void main(String[] args) {
-		ConfigurableApplicationContext context = SpringApplication.run(BootwebdemoApplication.class, args);
+		ConfigurableApplicationContext context = SpringApplication.run(App.class, args);
+		System.out.println("Running...");
 	}
 
 }
