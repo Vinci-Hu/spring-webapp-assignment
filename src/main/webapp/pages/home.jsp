@@ -7,6 +7,7 @@
 </head>
 
 <body>
+    <h2>Welcome ${name}
    <%
    double num = Math.random();
    if (num > 0.95) {
