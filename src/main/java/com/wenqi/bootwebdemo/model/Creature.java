@@ -1,4 +1,4 @@
-package com.wenqi.bootwebdemo;
+package com.wenqi.bootwebdemo.model;
 
 public interface Creature {
     void breathe();

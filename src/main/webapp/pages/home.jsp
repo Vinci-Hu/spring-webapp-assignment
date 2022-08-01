@@ -8,6 +8,7 @@
 
 <body>
     <h2>Welcome ${name}
+   <%-- This is JSP comment
    <%
    double num = Math.random();
    if (num > 0.95) {
@@ -21,5 +22,6 @@
    }
    %>
    <a href="<%= request.getRequestURI() %>"><h3>Try Again</h3></a>
+   --%>
 </body>
 </html>

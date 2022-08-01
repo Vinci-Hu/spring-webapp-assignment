@@ -1,13 +1,15 @@
-package com.wenqi.bootwebdemo;
+package com.wenqi.bootwebdemo.model;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.stereotype.Component;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-@Component
-public class Person implements Creature{
+@Entity
+public class Person implements Creature {
 
     private static Logger logger = LogManager.getLogger(Person.class);
+    @Id
     private int aid;
     private String aname;
     private  String lang;
