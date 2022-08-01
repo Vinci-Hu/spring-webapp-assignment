@@ -2,16 +2,14 @@ package com.wenqi.bootwebdemo.controller;
 
 import com.wenqi.bootwebdemo.service.NameService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HomeController {
     @Autowired
-    NameService service;
+    NameService nameService;
 
     @RequestMapping("/")
     public ModelAndView home(){
@@ -19,7 +17,7 @@ public class HomeController {
 
         ModelAndView mv = new ModelAndView();
 //        mv.addObject("name", myName);
-        mv.setViewName("home");
+        mv.setViewName("home.jsp");
 //        System.out.println("hi " + name);
         return mv; //because we set up a suffix search in app prop file
 
@@ -27,10 +25,11 @@ public class HomeController {
 
     @RequestMapping("/name")
     public ModelAndView getName(String name){
-        String newName = service.reverseString(name);
+        String newName = nameService.reverseString(name);
         ModelAndView mv = new ModelAndView();
         mv.addObject("name", newName);
-        mv.setViewName("home");
+        mv.setViewName("home.jsp");
         return mv;
     }
+
 }
