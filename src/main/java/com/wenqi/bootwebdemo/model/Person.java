@@ -63,4 +63,26 @@ public class Person implements Creature {
     public void breathe() {
         System.out.println("I am breathing.");
     }
+
+    public String speak(){
+        switch(lang) {
+            case "Chinese":
+                return "Ni hao! Wo shi "+aname+".";
+//                break;
+            case "English":
+                return "Hello! I am "+aname+".";
+//                break;
+            case "Italian":
+                return "Ciao! sono "+aname+".";
+//                break;
+            case "Spanish":
+                return "¡hola! soy "+aname+".";
+//                break;
+            case "Japanese":
+                return "Konichiwa! Watashiwa "+aname+" desu.";
+//                break;
+            default:
+                return "Hi!";
+        }
+    }
 }

@@ -124,4 +124,59 @@ public class PersonRepo {
         } //end try
         return personList;
     }
+
+    public Person getPersonById(int aid) {
+        Person person = new Person();
+        Connection conn = null;
+        Statement stmt = null;
+        try {
+            // STEP 1: Register JDBC driver
+            Class.forName(JDBC_DRIVER);
+
+            //STEP 2: Open a connection
+            System.out.println("Connecting to database...");
+            conn = DriverManager.getConnection(DB_URL,USER,PASS);
+
+            //STEP 3: Execute a query
+            System.out.println("Connected database successfully...");
+            stmt = conn.createStatement();
+            String sql = "SELECT aid,aname,lang FROM PERSON WHERE aid="+aid;
+            ResultSet rs = stmt.executeQuery(sql);
+            logger.info("Fetched data from db successfully.");
+
+            // STEP 4: Extract data from result set
+            while(rs.next()) {
+                // Retrieve by column name
+                String aname = rs.getString("aname");
+                String lang = rs.getString("lang");
+                // Create Person object
+                person.setAid(aid);
+                person.setAname(aname);
+                person.setLang(lang);
+//                System.out.println(person.toString());
+            }
+//            System.out.println(personList);
+            // STEP 5: Clean-up environment
+            rs.close();
+            return person;
+        } catch(SQLException se) {
+            //Handle errors for JDBC
+            se.printStackTrace();
+        } catch(Exception e) {
+            //Handle errors for Class.forName
+            e.printStackTrace();
+        } finally {
+            //finally block used to close resources
+            try{
+                if(stmt!=null) stmt.close();
+            } catch(SQLException se2) {
+            } // nothing we can do
+            try {
+                if(conn!=null) conn.close();
+            } catch(SQLException se){
+                se.printStackTrace();
+            } //end finally try
+        } //end try
+        return person;
+    }
 }

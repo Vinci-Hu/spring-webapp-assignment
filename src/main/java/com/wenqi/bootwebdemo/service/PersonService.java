@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PersonService {
@@ -20,5 +21,13 @@ public class PersonService {
         logger.info("Person list generated.");
 //        System.out.println("Service layer: " + personList);
         return personList;
+    }
+
+    public String getPersonById(int aid){
+        String speech="";
+        Person person = personRepo.getPersonById(aid);
+        logger.info("Person " + aid + " is retrieved.");
+        speech=person.speak();
+        return speech;
     }
 }
