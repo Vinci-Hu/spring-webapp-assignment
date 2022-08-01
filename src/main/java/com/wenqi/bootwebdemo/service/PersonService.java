@@ -13,9 +13,14 @@ import java.util.Optional;
 @Service
 public class PersonService {
     @Autowired
-    PersonRepo personRepo;
+    private PersonRepo personRepo;
 
     private static Logger logger = LogManager.getLogger(PersonService.class);
+
+    public PersonService(PersonRepo personRepo) {
+        this.personRepo = personRepo;
+    }
+
     public List<Person> getAllPersons(){
         List<Person> personList = personRepo.listAllPersons();
         logger.info("Person list generated.");
