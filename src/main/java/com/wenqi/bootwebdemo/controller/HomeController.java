@@ -12,8 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController {
     @Autowired
     NameService service;
-    @Value("${reverse-name}")
-    private boolean reverseFlag;
+
     @RequestMapping("/")
     public ModelAndView home(){
         //method name does not matter
@@ -28,10 +27,7 @@ public class HomeController {
 
     @RequestMapping("/name")
     public ModelAndView getName(String name){
-        String newName = name;
-        if (reverseFlag){
-            newName = service.reverseString(name);
-        }
+        String newName = service.reverseString(name);
         ModelAndView mv = new ModelAndView();
         mv.addObject("name", newName);
         mv.setViewName("home");
