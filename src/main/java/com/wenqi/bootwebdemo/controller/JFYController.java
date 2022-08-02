@@ -64,11 +64,11 @@ public class JFYController {
 
         HttpResponse <JsonNode> response = Unirest.get(encodedURL)
                 .asJson();
-        System.out.println("Status: "+response.getStatus());
-        System.out.println(response.getHeaders().get("Content-Type"));
+//        System.out.println("Status: "+response.getStatus());
+//        System.out.println(response.getHeaders().get("Content-Type"));
 
-        jfyService.storeResponse(response);
-        return "Retrieved succesfully";
+        String serviceResults = jfyService.storeResponse(response);
+        return serviceResults;
     }
 
     private String encodeValue(String value) throws UnsupportedEncodingException {

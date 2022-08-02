@@ -1,5 +1,7 @@
 package com.wenqi.bootwebdemo.dao;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wenqi.bootwebdemo.model.Item;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -7,6 +9,9 @@ import org.json.JSONArray;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -15,7 +20,7 @@ import java.util.List;
 
 @Repository
 public class JFYRepo {
-    private String filePath;
+    private String filePath="target/";
     private static Logger logger = LogManager.getLogger(JFYRepo.class);
     // JDBC driver name and database URL
     @Value("${JDBC_DRIVER}")
@@ -73,5 +78,30 @@ public class JFYRepo {
             } // end finally try
         } // end try
 //        System.out.println("Goodbye!");
+    }
+
+    public void writeToJson(List<Item> items){
+        ObjectMapper objectMapper = new ObjectMapper();
+//        Car car = new Car("yellow", "renault");
+//        objectMapper.writeValue(new File("target/car.json"), car);
+//        final ByteArrayOutputStream out = new ByteArrayOutputStream();
+//
+//        try {
+//            objectMapper.writeValue(out, items);
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+//
+//        final byte[] data = out.toByteArray();
+//        System.out.println(new String(data));
+        try {
+            objectMapper.writeValue(new File(filePath+"item_list.json"), items);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+//        String arrayToJson = objectMapper.writeValueAsString(items);
+
+
+
     }
 }
