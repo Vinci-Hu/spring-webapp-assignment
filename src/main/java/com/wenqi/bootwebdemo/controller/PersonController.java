@@ -1,5 +1,6 @@
 package com.wenqi.bootwebdemo.controller;
 
+import com.wenqi.bootwebdemo.exception.PersonNotFoundException;
 import com.wenqi.bootwebdemo.model.Person;
 import com.wenqi.bootwebdemo.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,12 @@ public class PersonController {
 
     @GetMapping("/person/{aid}")
     public String getPersonById(@PathVariable("aid") int aid){
-        String speech = personService.getPersonById(aid);
+        String speech = null;
+        try {
+            speech = personService.getPersonById(aid);
+        } catch (PersonNotFoundException e) {
+            return "Oops! No person found";
+        }
         return speech;
     }
 }

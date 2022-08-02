@@ -1,6 +1,7 @@
 package com.wenqi.bootwebdemo.service;
 
 import com.wenqi.bootwebdemo.dao.PersonRepo;
+import com.wenqi.bootwebdemo.exception.PersonNotFoundException;
 import com.wenqi.bootwebdemo.model.Person;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -28,11 +29,15 @@ public class PersonService {
         return personList;
     }
 
-    public String getPersonById(int aid){
+    public String getPersonById(int aid) throws PersonNotFoundException {
         String speech="";
-        Person person = personRepo.getPersonById(aid);
+        Optional<Person> oPerson =personRepo.getPersonById(aid);
+        if (!oPerson.isPresent()){
+//            return "Oh no! No person found";
+            throw new PersonNotFoundException();
+        }
         logger.info("Person " + aid + " is retrieved.");
-        speech=person.speak();
+        speech=oPerson.get().speak();
         return speech;
     }
 }

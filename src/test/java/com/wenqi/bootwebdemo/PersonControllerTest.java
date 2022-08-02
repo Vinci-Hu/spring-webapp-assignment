@@ -1,6 +1,7 @@
 package com.wenqi.bootwebdemo;
 
 import com.wenqi.bootwebdemo.controller.PersonController;
+import com.wenqi.bootwebdemo.exception.PersonNotFoundException;
 import com.wenqi.bootwebdemo.model.Person;
 import com.wenqi.bootwebdemo.service.PersonService;
 import org.junit.jupiter.api.Test;
@@ -11,6 +12,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.ResultActions;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.verify;
@@ -43,4 +45,14 @@ public class PersonControllerTest {
         verify(personService).getPersonById(1);
     }
 
+    @Test
+    public void testGetByIdNotFound() throws Exception {
+        when(personService.getPersonById(10)).thenThrow(new PersonNotFoundException());
+
+        ResultActions result = mockMvc.perform(get("/person/10"))
+                .andExpect(status().isNotFound());
+
+        verify(personService).getPersonById(10);
+
+    }
 }

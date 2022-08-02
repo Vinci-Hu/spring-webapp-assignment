@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class PersonRepo {
@@ -125,8 +126,8 @@ public class PersonRepo {
         return personList;
     }
 
-    public Person getPersonById(int aid) {
-        Person person = new Person();
+    public Optional<Person> getPersonById(int aid) {
+        Optional<Person> person = Optional.empty();
         Connection conn = null;
         Statement stmt = null;
         try {
@@ -150,10 +151,7 @@ public class PersonRepo {
                 String aname = rs.getString("aname");
                 String lang = rs.getString("lang");
                 // Create Person object
-                person.setAid(aid);
-                person.setAname(aname);
-                person.setLang(lang);
-//                System.out.println(person.toString());
+                person = Optional.of(new Person(aid, aname, lang));
             }
 //            System.out.println(personList);
             // STEP 5: Clean-up environment
