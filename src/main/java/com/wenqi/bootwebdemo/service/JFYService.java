@@ -5,12 +5,19 @@ import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.wenqi.bootwebdemo.dao.JFYRepo;
 import com.wenqi.bootwebdemo.model.Item;
+import com.wenqi.bootwebdemo.model.Response;
+import com.wenqi.bootwebdemo.model.Result;
+import com.wenqi.bootwebdemo.util.JsonUtility;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,14 +29,25 @@ public class JFYService {
     JFYRepo jfyRepo;
 
     public String storeResponse(HttpResponse<JsonNode> response){
+        ObjectMapper objectMapper = new ObjectMapper();
         JSONObject responseBody = response.getBody().getObject();
+        // map to response class
+        try {
+            Response response1 = objectMapper.readValue(responseBody.toString(),Response.class);
+            List<Result> resultClassList = response1.getResult();
+            for (Result result : resultClassList) {
+                System.out.println("Item name: " + result.getItemTitle());
+            }
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+
         JSONArray results = responseBody.getJSONArray("result");
-//        System.out.println("result"+result);
         List<Item> items = extractProperties(results);
         jfyRepo.writeToFile(results); // not implemented yet
-        jfyRepo.writeToDb(items);
-        jfyRepo.writeToJson(items);
-        ObjectMapper objectMapper = new ObjectMapper();
+        jfyRepo.writeToDb(items);  // Now db stores my Items object
+        jfyRepo.writeToJson(items); // The json of Item object is also returned to controller
+
         String itemJsonStr="";
         try {
             itemJsonStr = objectMapper.writeValueAsString(items);
@@ -59,5 +77,25 @@ public class JFYService {
             itemList.add(item);
         }
         return itemList;
+    }
+
+    public void createClassFromJson(JSONObject object){
+        String packageName = "com.wenqi.bootwebdemo.model";
+        String basePath = "src/main/resources";
+        String jsonPath = basePath + File.separator + "response.json";
+        try (PrintWriter out = new PrintWriter(new FileWriter(jsonPath))) {
+            out.write(object.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        File inputJson = new File(jsonPath);
+        File outputPojoDirectory = new File(basePath + File.separator + "convertedPojo");
+        outputPojoDirectory.mkdirs();
+        try {
+            JsonUtility.convertJsonToJavaClass(inputJson.toURI().toURL(), outputPojoDirectory, packageName, inputJson.getName().replace(".json", ""));
+        } catch (IOException e) {
+            System.out.println("Encountered issue while converting to pojo: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 }

@@ -68,6 +68,7 @@ public class JFYController {
 //        System.out.println(response.getHeaders().get("Content-Type"));
 
         String serviceResults = jfyService.storeResponse(response);
+//        jfyService.createClassFromJson(response.getBody().getObject());
         return serviceResults;
     }
 
