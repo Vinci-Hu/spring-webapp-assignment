@@ -39,7 +39,6 @@ public class PersonController {
         // int aid(>=10), String aname, String lang
         // todo: check existing aids, now assume pass in correct aid
         PersonResponseDTO response = personService.addPersonService(person);
-        // todo: return a json
         return response;
     }
 }
