@@ -4,9 +4,7 @@ import com.wenqi.bootwebdemo.exception.PersonNotFoundException;
 import com.wenqi.bootwebdemo.model.Person;
 import com.wenqi.bootwebdemo.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -33,5 +31,18 @@ public class PersonController {
             return "Oops! No person found";
         }
         return speech;
+    }
+
+    @PostMapping(path="/person/add", consumes = {"application/json"})
+    public String addPerson(@RequestBody Person person){
+        // int aid(>=10), String aname, String lang
+        // todo: check existing aids, now assume pass in correct aid
+        boolean callServiceSuccess = personService.addPersonService(person);
+        // todo: return a json
+        if (callServiceSuccess){
+            return "Person created..." + person.speak();
+        } else{
+            return "Person creation failed.";
+        }
     }
 }

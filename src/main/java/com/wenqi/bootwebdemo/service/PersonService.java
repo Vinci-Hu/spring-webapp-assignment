@@ -40,4 +40,13 @@ public class PersonService {
         speech=oPerson.get().speak();
         return speech;
     }
+
+    public boolean addPersonService(Person person) {
+        boolean callRepoSuccess = personRepo.addPerson(person);
+        if (callRepoSuccess){
+            return true;
+        }else {
+            return false;
+        }
+    }
 }
