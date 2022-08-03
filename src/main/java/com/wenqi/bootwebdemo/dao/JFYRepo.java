@@ -1,15 +1,14 @@
 package com.wenqi.bootwebdemo.dao;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wenqi.bootwebdemo.model.Item;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.json.JSONArray;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
@@ -20,6 +19,8 @@ import java.util.List;
 
 @Repository
 public class JFYRepo {
+    @Autowired
+    JdbcTemplate template;
     private String filePath="target/";
     private static Logger logger = LogManager.getLogger(JFYRepo.class);
     // JDBC driver name and database URL
@@ -32,9 +33,6 @@ public class JFYRepo {
     String USER;
     @Value("${DB_PSW}")
     String PASS;
-    public void writeToFile(JSONArray results){
-
-    }
 
     public void writeToDb(List<Item> items) {
         Connection conn = null;
@@ -77,31 +75,28 @@ public class JFYRepo {
                 se.printStackTrace();
             } // end finally try
         } // end try
-//        System.out.println("Goodbye!");
     }
 
+    public void writeToDbWithTemplate(List<Item> items){
+        for (Item item : items){
+            String sql = "INSERT INTO ITEM VALUES(?,?,?,?,?,?,?)";
+            template.update(sql,
+                    item.getItemId(),
+                    item.getPrice(),
+                    item.getShopId(),
+                    item.getStock(),
+                    item.getSold(),
+                    item.getTitle(),
+                    item.getUrl());
+        }
+        logger.info("Inserted records via template");
+    }
     public void writeToJson(List<Item> items){
         ObjectMapper objectMapper = new ObjectMapper();
-//        Car car = new Car("yellow", "renault");
-//        objectMapper.writeValue(new File("target/car.json"), car);
-//        final ByteArrayOutputStream out = new ByteArrayOutputStream();
-//
-//        try {
-//            objectMapper.writeValue(out, items);
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        }
-//
-//        final byte[] data = out.toByteArray();
-//        System.out.println(new String(data));
         try {
             objectMapper.writeValue(new File(filePath+"item_list.json"), items);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-//        String arrayToJson = objectMapper.writeValueAsString(items);
-
-
-
     }
 }

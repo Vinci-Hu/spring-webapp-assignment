@@ -35,19 +35,19 @@ public class JFYService {
         try {
             Response response1 = objectMapper.readValue(responseBody.toString(),Response.class);
             List<Result> resultClassList = response1.getResult();
-            for (Result result : resultClassList) {
-                System.out.println("Item name: " + result.getItemTitle());
-            }
+//            for (Result result : resultClassList) {
+//                System.out.println("Item name: " + result.getItemTitle());
+//            }
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
 
         JSONArray results = responseBody.getJSONArray("result");
         List<Item> items = extractProperties(results);
-        jfyRepo.writeToFile(results); // not implemented yet
-        jfyRepo.writeToDb(items);  // Now db stores my Items object
-        jfyRepo.writeToJson(items); // The json of Item object is also returned to controller
+        jfyRepo.writeToDbWithTemplate(items);  // Now db stores my Items object
+        jfyRepo.writeToJson(items);
 
+        // The json of Item object is also returned to controller
         String itemJsonStr="";
         try {
             itemJsonStr = objectMapper.writeValueAsString(items);
