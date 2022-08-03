@@ -3,6 +3,7 @@ package com.wenqi.bootwebdemo.service;
 import com.wenqi.bootwebdemo.dao.PersonRepo;
 import com.wenqi.bootwebdemo.exception.PersonNotFoundException;
 import com.wenqi.bootwebdemo.model.Person;
+import com.wenqi.bootwebdemo.model.PersonResponseDTO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,12 +42,12 @@ public class PersonService {
         return speech;
     }
 
-    public boolean addPersonService(Person person) {
+    public PersonResponseDTO addPersonService(Person person) {
         boolean callRepoSuccess = personRepo.addPerson(person);
         if (callRepoSuccess){
-            return true;
+            return new PersonResponseDTO("success", person);
         }else {
-            return false;
+            return new PersonResponseDTO("failed", person);
         }
     }
 }
