@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @Repository
 public class PersonRepo {
-    private static Logger logger = LogManager.getLogger(PersonRepo.class);
+    private static final Logger logger = LogManager.getLogger(PersonRepo.class);
     // JDBC driver name and database URL
     @Value("${JDBC_DRIVER}")
     String JDBC_DRIVER;
@@ -25,7 +25,7 @@ public class PersonRepo {
     @Value("${DB_PSW}")
     String PASS;
 
-    public List<Person> listAllPersons(){
+    public List<Person> listAllPersons() {
         List<Person> personList = new ArrayList<Person>();
         Connection conn = null;
         Statement stmt = null;
@@ -35,7 +35,7 @@ public class PersonRepo {
 
             //STEP 2: Open a connection
             System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(DB_URL,USER,PASS);
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
             //STEP 3: Execute a query
             System.out.println("Connected database successfully...");
@@ -45,35 +45,33 @@ public class PersonRepo {
             logger.info("Fetched data from db successfully.");
 
             // STEP 4: Extract data from result set
-            while(rs.next()) {
+            while (rs.next()) {
                 // Retrieve by column name
-                int aid  = rs.getInt("aid");
+                int aid = rs.getInt("aid");
                 String aname = rs.getString("aname");
                 String lang = rs.getString("lang");
                 // Create Person object
-                Person person = new Person(aid,aname,lang);
+                Person person = new Person(aid, aname, lang);
                 personList.add(person);
-//                System.out.println(person.toString());
             }
-//            System.out.println(personList);
             // STEP 5: Clean-up environment
             rs.close();
             return personList;
-        } catch(SQLException se) {
+        } catch (SQLException se) {
             //Handle errors for JDBC
             se.printStackTrace();
-        } catch(Exception e) {
+        } catch (Exception e) {
             //Handle errors for Class.forName
             e.printStackTrace();
         } finally {
             //finally block used to close resources
-            try{
-                if(stmt!=null) stmt.close();
-            } catch(SQLException se2) {
+            try {
+                if (stmt != null) stmt.close();
+            } catch (SQLException se2) {
             } // nothing we can do
             try {
-                if(conn!=null) conn.close();
-            } catch(SQLException se){
+                if (conn != null) conn.close();
+            } catch (SQLException se) {
                 se.printStackTrace();
             } //end finally try
         } //end try
@@ -90,42 +88,41 @@ public class PersonRepo {
 
             //STEP 2: Open a connection
             System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(DB_URL,USER,PASS);
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
             //STEP 3: Execute a query
             System.out.println("Connected database successfully...");
             stmt = conn.createStatement();
-            String sql = "SELECT aid,aname,lang FROM PERSON WHERE aid="+aid;
+            String sql = "SELECT aid,aname,lang FROM PERSON WHERE aid=" + aid;
             ResultSet rs = stmt.executeQuery(sql);
             logger.info("Fetched data from db successfully.");
 
             // STEP 4: Extract data from result set
-            while(rs.next()) {
+            while (rs.next()) {
                 // Retrieve by column name
                 String aname = rs.getString("aname");
                 String lang = rs.getString("lang");
                 // Create Person object
                 person = Optional.of(new Person(aid, aname, lang));
             }
-//            System.out.println(personList);
             // STEP 5: Clean-up environment
             rs.close();
             return person;
-        } catch(SQLException se) {
+        } catch (SQLException se) {
             //Handle errors for JDBC
             se.printStackTrace();
-        } catch(Exception e) {
+        } catch (Exception e) {
             //Handle errors for Class.forName
             e.printStackTrace();
         } finally {
             //finally block used to close resources
-            try{
-                if(stmt!=null) stmt.close();
-            } catch(SQLException se2) {
+            try {
+                if (stmt != null) stmt.close();
+            } catch (SQLException se2) {
             } // nothing we can do
             try {
-                if(conn!=null) conn.close();
-            } catch(SQLException se){
+                if (conn != null) conn.close();
+            } catch (SQLException se) {
                 se.printStackTrace();
             } //end finally try
         } //end try
@@ -141,12 +138,12 @@ public class PersonRepo {
 
             //STEP 2: Open a connection
             System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(DB_URL,USER,PASS);
+            conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
             //STEP 3: Execute a query
             System.out.println("Connected database successfully...");
             stmt = conn.createStatement();
-            String sql = "insert into person values("+person.getAid()+",'"+person.getAname()+"','"+person.getLang()+"');";
+            String sql = "insert into person values(" + person.getAid() + ",'" + person.getAname() + "','" + person.getLang() + "');";
             stmt.executeUpdate(sql);
             logger.info("Added person successfully");
 
@@ -154,21 +151,21 @@ public class PersonRepo {
             stmt.close();
             conn.close();
             return true;
-        } catch(SQLException se) {
+        } catch (SQLException se) {
             //Handle errors for JDBC
             se.printStackTrace();
-        } catch(Exception e) {
+        } catch (Exception e) {
             //Handle errors for Class.forName
             e.printStackTrace();
         } finally {
             //finally block used to close resources
-            try{
-                if(stmt!=null) stmt.close();
-            } catch(SQLException se2) {
+            try {
+                if (stmt != null) stmt.close();
+            } catch (SQLException se2) {
             } // nothing we can do
             try {
-                if(conn!=null) conn.close();
-            } catch(SQLException se){
+                if (conn != null) conn.close();
+            } catch (SQLException se) {
                 se.printStackTrace();
             } //end finally try
         } //end try

@@ -1,30 +1,25 @@
-
 package com.wenqi.bootwebdemo.model;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "result",
-    "preloadStartItem",
-    "pageTotal",
-    "pvid",
-    "maxUploadCount",
-    "priceDisplayType",
-    "scm",
-    "version",
-    "tpp_trace",
-    "preloadStartPixel"
+        "result",
+        "preloadStartItem",
+        "pageTotal",
+        "pvid",
+        "maxUploadCount",
+        "priceDisplayType",
+        "scm",
+        "version",
+        "tpp_trace",
+        "preloadStartPixel"
 })
 @Generated("jsonschema2pojo")
 public class Response {
@@ -223,50 +218,50 @@ public class Response {
         sb.append(Response.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("result");
         sb.append('=');
-        sb.append(((this.result == null)?"<null>":this.result));
+        sb.append(((this.result == null) ? "<null>" : this.result));
         sb.append(',');
         sb.append("preloadStartItem");
         sb.append('=');
-        sb.append(((this.preloadStartItem == null)?"<null>":this.preloadStartItem));
+        sb.append(((this.preloadStartItem == null) ? "<null>" : this.preloadStartItem));
         sb.append(',');
         sb.append("pageTotal");
         sb.append('=');
-        sb.append(((this.pageTotal == null)?"<null>":this.pageTotal));
+        sb.append(((this.pageTotal == null) ? "<null>" : this.pageTotal));
         sb.append(',');
         sb.append("pvid");
         sb.append('=');
-        sb.append(((this.pvid == null)?"<null>":this.pvid));
+        sb.append(((this.pvid == null) ? "<null>" : this.pvid));
         sb.append(',');
         sb.append("maxUploadCount");
         sb.append('=');
-        sb.append(((this.maxUploadCount == null)?"<null>":this.maxUploadCount));
+        sb.append(((this.maxUploadCount == null) ? "<null>" : this.maxUploadCount));
         sb.append(',');
         sb.append("priceDisplayType");
         sb.append('=');
-        sb.append(((this.priceDisplayType == null)?"<null>":this.priceDisplayType));
+        sb.append(((this.priceDisplayType == null) ? "<null>" : this.priceDisplayType));
         sb.append(',');
         sb.append("scm");
         sb.append('=');
-        sb.append(((this.scm == null)?"<null>":this.scm));
+        sb.append(((this.scm == null) ? "<null>" : this.scm));
         sb.append(',');
         sb.append("version");
         sb.append('=');
-        sb.append(((this.version == null)?"<null>":this.version));
+        sb.append(((this.version == null) ? "<null>" : this.version));
         sb.append(',');
         sb.append("tppTrace");
         sb.append('=');
-        sb.append(((this.tppTrace == null)?"<null>":this.tppTrace));
+        sb.append(((this.tppTrace == null) ? "<null>" : this.tppTrace));
         sb.append(',');
         sb.append("preloadStartPixel");
         sb.append('=');
-        sb.append(((this.preloadStartPixel == null)?"<null>":this.preloadStartPixel));
+        sb.append(((this.preloadStartPixel == null) ? "<null>" : this.preloadStartPixel));
         sb.append(',');
         sb.append("additionalProperties");
         sb.append('=');
-        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
+        sb.append(((this.additionalProperties == null) ? "<null>" : this.additionalProperties));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -276,17 +271,17 @@ public class Response {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.result == null)? 0 :this.result.hashCode()));
-        result = ((result* 31)+((this.preloadStartItem == null)? 0 :this.preloadStartItem.hashCode()));
-        result = ((result* 31)+((this.pageTotal == null)? 0 :this.pageTotal.hashCode()));
-        result = ((result* 31)+((this.pvid == null)? 0 :this.pvid.hashCode()));
-        result = ((result* 31)+((this.tppTrace == null)? 0 :this.tppTrace.hashCode()));
-        result = ((result* 31)+((this.maxUploadCount == null)? 0 :this.maxUploadCount.hashCode()));
-        result = ((result* 31)+((this.priceDisplayType == null)? 0 :this.priceDisplayType.hashCode()));
-        result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
-        result = ((result* 31)+((this.scm == null)? 0 :this.scm.hashCode()));
-        result = ((result* 31)+((this.version == null)? 0 :this.version.hashCode()));
-        result = ((result* 31)+((this.preloadStartPixel == null)? 0 :this.preloadStartPixel.hashCode()));
+        result = ((result * 31) + ((this.result == null) ? 0 : this.result.hashCode()));
+        result = ((result * 31) + ((this.preloadStartItem == null) ? 0 : this.preloadStartItem.hashCode()));
+        result = ((result * 31) + ((this.pageTotal == null) ? 0 : this.pageTotal.hashCode()));
+        result = ((result * 31) + ((this.pvid == null) ? 0 : this.pvid.hashCode()));
+        result = ((result * 31) + ((this.tppTrace == null) ? 0 : this.tppTrace.hashCode()));
+        result = ((result * 31) + ((this.maxUploadCount == null) ? 0 : this.maxUploadCount.hashCode()));
+        result = ((result * 31) + ((this.priceDisplayType == null) ? 0 : this.priceDisplayType.hashCode()));
+        result = ((result * 31) + ((this.additionalProperties == null) ? 0 : this.additionalProperties.hashCode()));
+        result = ((result * 31) + ((this.scm == null) ? 0 : this.scm.hashCode()));
+        result = ((result * 31) + ((this.version == null) ? 0 : this.version.hashCode()));
+        result = ((result * 31) + ((this.preloadStartPixel == null) ? 0 : this.preloadStartPixel.hashCode()));
         return result;
     }
 
@@ -299,7 +294,7 @@ public class Response {
             return false;
         }
         Response rhs = ((Response) other);
-        return ((((((((((((this.result == rhs.result)||((this.result!= null)&&this.result.equals(rhs.result)))&&((this.preloadStartItem == rhs.preloadStartItem)||((this.preloadStartItem!= null)&&this.preloadStartItem.equals(rhs.preloadStartItem))))&&((this.pageTotal == rhs.pageTotal)||((this.pageTotal!= null)&&this.pageTotal.equals(rhs.pageTotal))))&&((this.pvid == rhs.pvid)||((this.pvid!= null)&&this.pvid.equals(rhs.pvid))))&&((this.tppTrace == rhs.tppTrace)||((this.tppTrace!= null)&&this.tppTrace.equals(rhs.tppTrace))))&&((this.maxUploadCount == rhs.maxUploadCount)||((this.maxUploadCount!= null)&&this.maxUploadCount.equals(rhs.maxUploadCount))))&&((this.priceDisplayType == rhs.priceDisplayType)||((this.priceDisplayType!= null)&&this.priceDisplayType.equals(rhs.priceDisplayType))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.scm == rhs.scm)||((this.scm!= null)&&this.scm.equals(rhs.scm))))&&((this.version == rhs.version)||((this.version!= null)&&this.version.equals(rhs.version))))&&((this.preloadStartPixel == rhs.preloadStartPixel)||((this.preloadStartPixel!= null)&&this.preloadStartPixel.equals(rhs.preloadStartPixel))));
+        return ((((((((((((this.result == rhs.result) || ((this.result != null) && this.result.equals(rhs.result))) && ((this.preloadStartItem == rhs.preloadStartItem) || ((this.preloadStartItem != null) && this.preloadStartItem.equals(rhs.preloadStartItem)))) && ((this.pageTotal == rhs.pageTotal) || ((this.pageTotal != null) && this.pageTotal.equals(rhs.pageTotal)))) && ((this.pvid == rhs.pvid) || ((this.pvid != null) && this.pvid.equals(rhs.pvid)))) && ((this.tppTrace == rhs.tppTrace) || ((this.tppTrace != null) && this.tppTrace.equals(rhs.tppTrace)))) && ((this.maxUploadCount == rhs.maxUploadCount) || ((this.maxUploadCount != null) && this.maxUploadCount.equals(rhs.maxUploadCount)))) && ((this.priceDisplayType == rhs.priceDisplayType) || ((this.priceDisplayType != null) && this.priceDisplayType.equals(rhs.priceDisplayType)))) && ((this.additionalProperties == rhs.additionalProperties) || ((this.additionalProperties != null) && this.additionalProperties.equals(rhs.additionalProperties)))) && ((this.scm == rhs.scm) || ((this.scm != null) && this.scm.equals(rhs.scm)))) && ((this.version == rhs.version) || ((this.version != null) && this.version.equals(rhs.version)))) && ((this.preloadStartPixel == rhs.preloadStartPixel) || ((this.preloadStartPixel != null) && this.preloadStartPixel.equals(rhs.preloadStartPixel))));
     }
 
 }

@@ -11,11 +11,21 @@ import javax.persistence.Id;
 @Component
 public class Person implements Creature {
 
-    private static Logger logger = LogManager.getLogger(Person.class);
+    private static final Logger logger = LogManager.getLogger(Person.class);
     @Id
     private int aid;
     private String aname;
-    private  String lang;
+    private String lang;
+
+    public Person() {
+        logger.info("A Person is born.");
+    }
+
+    public Person(int aid, String aname, String lang) {
+        this.aid = aid;
+        this.aname = aname;
+        this.lang = lang;
+    }
 
     public int getAid() {
         return aid;
@@ -41,22 +51,9 @@ public class Person implements Creature {
         this.lang = lang;
     }
 
-    public Person() {
-        logger.info("A Person is born.");
-    }
-
-    public Person(int aid, String aname, String lang) {
-        this.aid = aid;
-        this.aname = aname;
-        this.lang = lang;
-    }
-
     @Override
     public String toString() {
-        return "Person " + aid +
-                " named " + aname +
-                " speaks " + lang +
-                ".";
+        return "Person " + aid + " named " + aname + " speaks " + lang + ".";
     }
 
     @Override
@@ -64,22 +61,22 @@ public class Person implements Creature {
         System.out.println("I am breathing.");
     }
 
-    public String speak(){
-        switch(lang) {
+    public String speak() {
+        switch (lang) {
             case "Chinese":
-                return "Ni hao! Wo shi "+aname+".";
+                return "Ni hao! Wo shi " + aname + ".";
 //                break;
             case "English":
-                return "Hello! I am "+aname+".";
+                return "Hello! I am " + aname + ".";
 //                break;
             case "Italian":
-                return "Ciao! sono "+aname+".";
+                return "Ciao! sono " + aname + ".";
 //                break;
             case "Spanish":
-                return "¡hola! soy "+aname+".";
+                return "¡hola! soy " + aname + ".";
 //                break;
             case "Japanese":
-                return "Konichiwa! Watashiwa "+aname+" desu.";
+                return "Konichiwa! Watashiwa " + aname + " desu.";
 //                break;
             default:
                 return "Hi!";

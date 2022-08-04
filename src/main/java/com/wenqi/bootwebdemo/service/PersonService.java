@@ -14,40 +14,37 @@ import java.util.Optional;
 
 @Service
 public class PersonService {
+    private static final Logger logger = LogManager.getLogger(PersonService.class);
     @Autowired
-    private PersonRepo personRepo;
-
-    private static Logger logger = LogManager.getLogger(PersonService.class);
+    private final PersonRepo personRepo;
 
     public PersonService(PersonRepo personRepo) {
         this.personRepo = personRepo;
     }
 
-    public List<Person> getAllPersons(){
+    public List<Person> getAllPersons() {
         List<Person> personList = personRepo.listAllPersons();
         logger.info("Person list generated.");
-//        System.out.println("Service layer: " + personList);
         return personList;
     }
 
     public String getPersonById(int aid) throws PersonNotFoundException {
-        String speech="";
-        Optional<Person> oPerson =personRepo.getPersonById(aid);
-        if (!oPerson.isPresent()){
-//            return "Oh no! No person found";
+        String speech = "";
+        Optional<Person> oPerson = personRepo.getPersonById(aid);
+        if (!oPerson.isPresent()) {
             throw new PersonNotFoundException();
         }
         logger.info("Person " + aid + " is retrieved.");
-        speech=oPerson.get().speak();
+        speech = oPerson.get().speak();
         return speech;
     }
 
     public PersonResponseDTO addPersonService(Person person) {
         boolean callRepoSuccess = personRepo.addPerson(person);
-        if (callRepoSuccess){
-            return new PersonResponseDTO("success", person);
-        }else {
-            return new PersonResponseDTO("failed", person);
+        if (callRepoSuccess) {
+            return new PersonResponseDTO("success", person, person.speak());
+        } else {
+            return new PersonResponseDTO("failed", person, "?");
         }
     }
 }

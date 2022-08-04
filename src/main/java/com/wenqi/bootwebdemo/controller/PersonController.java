@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class PersonController {
@@ -16,15 +15,14 @@ public class PersonController {
     @Autowired
     PersonService personService;
 
-    @GetMapping(path="/persons", produces= {"application/json"})
-    public List<Person> getPersonList(){
+    @GetMapping(path = "/persons", produces = {"application/json"})
+    public List<Person> getPersonList() {
         List<Person> personList = personService.getAllPersons();
-//        System.out.println("Controller layer: " + personList);
         return personList;
     }
 
     @GetMapping("/person/{aid}")
-    public String getPersonById(@PathVariable("aid") int aid){
+    public String getPersonById(@PathVariable("aid") int aid) {
         String speech = null;
         try {
             speech = personService.getPersonById(aid);
@@ -34,8 +32,8 @@ public class PersonController {
         return speech;
     }
 
-    @PostMapping(path="/person/add", consumes = {"application/json"})
-    public PersonResponseDTO addPerson(@RequestBody Person person){
+    @PostMapping(value = "/person/add", consumes = {"application/json"})
+    public PersonResponseDTO addPerson(@RequestBody Person person) {
         // int aid(>=10), String aname, String lang
         // todo: check existing aids, now assume pass in correct aid
         PersonResponseDTO response = personService.addPersonService(person);

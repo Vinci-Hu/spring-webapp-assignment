@@ -1,67 +1,13 @@
-
 package com.wenqi.bootwebdemo.model;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-    "itemWantedStr",
-    "itemTitle",
-    "itemSoldCnt",
-    "extendedItemInfo",
-    "matchType",
-    "clickTrackInfo",
-    "itemDiscount",
-    "express",
-    "itemWantedCnt",
-    "itemRegion",
-    "promotionTag",
-    "shopNameLocal",
-    "type",
-    "stockAvailable",
-    "itemImg",
-    "sellerId",
-    "itemRatingScore",
-    "itemDiscountPrice",
-    "itemDiscountRaw",
-    "isGc",
-    "currency",
-    "shopId",
-    "isOfficialStore",
-    "auctionType",
-    "skuId",
-    "idStr",
-    "catIdLv1",
-    "shopNameEn",
-    "trackInfo",
-    "isSoldByLazada",
-    "isCertified",
-    "shopLogo",
-    "center",
-    "itemDiscountPriceShow",
-    "itemPriceShow",
-    "shopUrl",
-    "itemInstallment",
-    "itemId",
-    "catId",
-    "categoryLv3Name",
-    "itemReviews",
-    "mainTitle",
-    "brandId",
-    "getTbc",
-    "currencyFlag",
-    "itemPrice",
-    "location",
-    "itemUrl"
-})
+@JsonPropertyOrder({"itemWantedStr", "itemTitle", "itemSoldCnt", "extendedItemInfo", "matchType", "clickTrackInfo", "itemDiscount", "express", "itemWantedCnt", "itemRegion", "promotionTag", "shopNameLocal", "type", "stockAvailable", "itemImg", "sellerId", "itemRatingScore", "itemDiscountPrice", "itemDiscountRaw", "isGc", "currency", "shopId", "isOfficialStore", "auctionType", "skuId", "idStr", "catIdLv1", "shopNameEn", "trackInfo", "isSoldByLazada", "isCertified", "shopLogo", "center", "itemDiscountPriceShow", "itemPriceShow", "shopUrl", "itemInstallment", "itemId", "catId", "categoryLv3Name", "itemReviews", "mainTitle", "brandId", "getTbc", "currencyFlag", "itemPrice", "location", "itemUrl"})
 @Generated("jsonschema2pojo")
 public class Result {
 
@@ -905,202 +851,202 @@ public class Result {
         sb.append(Result.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("itemWantedStr");
         sb.append('=');
-        sb.append(((this.itemWantedStr == null)?"<null>":this.itemWantedStr));
+        sb.append(((this.itemWantedStr == null) ? "<null>" : this.itemWantedStr));
         sb.append(',');
         sb.append("itemTitle");
         sb.append('=');
-        sb.append(((this.itemTitle == null)?"<null>":this.itemTitle));
+        sb.append(((this.itemTitle == null) ? "<null>" : this.itemTitle));
         sb.append(',');
         sb.append("itemSoldCnt");
         sb.append('=');
-        sb.append(((this.itemSoldCnt == null)?"<null>":this.itemSoldCnt));
+        sb.append(((this.itemSoldCnt == null) ? "<null>" : this.itemSoldCnt));
         sb.append(',');
         sb.append("extendedItemInfo");
         sb.append('=');
-        sb.append(((this.extendedItemInfo == null)?"<null>":this.extendedItemInfo));
+        sb.append(((this.extendedItemInfo == null) ? "<null>" : this.extendedItemInfo));
         sb.append(',');
         sb.append("matchType");
         sb.append('=');
-        sb.append(((this.matchType == null)?"<null>":this.matchType));
+        sb.append(((this.matchType == null) ? "<null>" : this.matchType));
         sb.append(',');
         sb.append("clickTrackInfo");
         sb.append('=');
-        sb.append(((this.clickTrackInfo == null)?"<null>":this.clickTrackInfo));
+        sb.append(((this.clickTrackInfo == null) ? "<null>" : this.clickTrackInfo));
         sb.append(',');
         sb.append("itemDiscount");
         sb.append('=');
-        sb.append(((this.itemDiscount == null)?"<null>":this.itemDiscount));
+        sb.append(((this.itemDiscount == null) ? "<null>" : this.itemDiscount));
         sb.append(',');
         sb.append("express");
         sb.append('=');
-        sb.append(((this.express == null)?"<null>":this.express));
+        sb.append(((this.express == null) ? "<null>" : this.express));
         sb.append(',');
         sb.append("itemWantedCnt");
         sb.append('=');
-        sb.append(((this.itemWantedCnt == null)?"<null>":this.itemWantedCnt));
+        sb.append(((this.itemWantedCnt == null) ? "<null>" : this.itemWantedCnt));
         sb.append(',');
         sb.append("itemRegion");
         sb.append('=');
-        sb.append(((this.itemRegion == null)?"<null>":this.itemRegion));
+        sb.append(((this.itemRegion == null) ? "<null>" : this.itemRegion));
         sb.append(',');
         sb.append("promotionTag");
         sb.append('=');
-        sb.append(((this.promotionTag == null)?"<null>":this.promotionTag));
+        sb.append(((this.promotionTag == null) ? "<null>" : this.promotionTag));
         sb.append(',');
         sb.append("shopNameLocal");
         sb.append('=');
-        sb.append(((this.shopNameLocal == null)?"<null>":this.shopNameLocal));
+        sb.append(((this.shopNameLocal == null) ? "<null>" : this.shopNameLocal));
         sb.append(',');
         sb.append("type");
         sb.append('=');
-        sb.append(((this.type == null)?"<null>":this.type));
+        sb.append(((this.type == null) ? "<null>" : this.type));
         sb.append(',');
         sb.append("stockAvailable");
         sb.append('=');
-        sb.append(((this.stockAvailable == null)?"<null>":this.stockAvailable));
+        sb.append(((this.stockAvailable == null) ? "<null>" : this.stockAvailable));
         sb.append(',');
         sb.append("itemImg");
         sb.append('=');
-        sb.append(((this.itemImg == null)?"<null>":this.itemImg));
+        sb.append(((this.itemImg == null) ? "<null>" : this.itemImg));
         sb.append(',');
         sb.append("sellerId");
         sb.append('=');
-        sb.append(((this.sellerId == null)?"<null>":this.sellerId));
+        sb.append(((this.sellerId == null) ? "<null>" : this.sellerId));
         sb.append(',');
         sb.append("itemRatingScore");
         sb.append('=');
-        sb.append(((this.itemRatingScore == null)?"<null>":this.itemRatingScore));
+        sb.append(((this.itemRatingScore == null) ? "<null>" : this.itemRatingScore));
         sb.append(',');
         sb.append("itemDiscountPrice");
         sb.append('=');
-        sb.append(((this.itemDiscountPrice == null)?"<null>":this.itemDiscountPrice));
+        sb.append(((this.itemDiscountPrice == null) ? "<null>" : this.itemDiscountPrice));
         sb.append(',');
         sb.append("itemDiscountRaw");
         sb.append('=');
-        sb.append(((this.itemDiscountRaw == null)?"<null>":this.itemDiscountRaw));
+        sb.append(((this.itemDiscountRaw == null) ? "<null>" : this.itemDiscountRaw));
         sb.append(',');
         sb.append("isGc");
         sb.append('=');
-        sb.append(((this.isGc == null)?"<null>":this.isGc));
+        sb.append(((this.isGc == null) ? "<null>" : this.isGc));
         sb.append(',');
         sb.append("currency");
         sb.append('=');
-        sb.append(((this.currency == null)?"<null>":this.currency));
+        sb.append(((this.currency == null) ? "<null>" : this.currency));
         sb.append(',');
         sb.append("shopId");
         sb.append('=');
-        sb.append(((this.shopId == null)?"<null>":this.shopId));
+        sb.append(((this.shopId == null) ? "<null>" : this.shopId));
         sb.append(',');
         sb.append("isOfficialStore");
         sb.append('=');
-        sb.append(((this.isOfficialStore == null)?"<null>":this.isOfficialStore));
+        sb.append(((this.isOfficialStore == null) ? "<null>" : this.isOfficialStore));
         sb.append(',');
         sb.append("auctionType");
         sb.append('=');
-        sb.append(((this.auctionType == null)?"<null>":this.auctionType));
+        sb.append(((this.auctionType == null) ? "<null>" : this.auctionType));
         sb.append(',');
         sb.append("skuId");
         sb.append('=');
-        sb.append(((this.skuId == null)?"<null>":this.skuId));
+        sb.append(((this.skuId == null) ? "<null>" : this.skuId));
         sb.append(',');
         sb.append("idStr");
         sb.append('=');
-        sb.append(((this.idStr == null)?"<null>":this.idStr));
+        sb.append(((this.idStr == null) ? "<null>" : this.idStr));
         sb.append(',');
         sb.append("catIdLv1");
         sb.append('=');
-        sb.append(((this.catIdLv1 == null)?"<null>":this.catIdLv1));
+        sb.append(((this.catIdLv1 == null) ? "<null>" : this.catIdLv1));
         sb.append(',');
         sb.append("shopNameEn");
         sb.append('=');
-        sb.append(((this.shopNameEn == null)?"<null>":this.shopNameEn));
+        sb.append(((this.shopNameEn == null) ? "<null>" : this.shopNameEn));
         sb.append(',');
         sb.append("trackInfo");
         sb.append('=');
-        sb.append(((this.trackInfo == null)?"<null>":this.trackInfo));
+        sb.append(((this.trackInfo == null) ? "<null>" : this.trackInfo));
         sb.append(',');
         sb.append("isSoldByLazada");
         sb.append('=');
-        sb.append(((this.isSoldByLazada == null)?"<null>":this.isSoldByLazada));
+        sb.append(((this.isSoldByLazada == null) ? "<null>" : this.isSoldByLazada));
         sb.append(',');
         sb.append("isCertified");
         sb.append('=');
-        sb.append(((this.isCertified == null)?"<null>":this.isCertified));
+        sb.append(((this.isCertified == null) ? "<null>" : this.isCertified));
         sb.append(',');
         sb.append("shopLogo");
         sb.append('=');
-        sb.append(((this.shopLogo == null)?"<null>":this.shopLogo));
+        sb.append(((this.shopLogo == null) ? "<null>" : this.shopLogo));
         sb.append(',');
         sb.append("center");
         sb.append('=');
-        sb.append(((this.center == null)?"<null>":this.center));
+        sb.append(((this.center == null) ? "<null>" : this.center));
         sb.append(',');
         sb.append("itemDiscountPriceShow");
         sb.append('=');
-        sb.append(((this.itemDiscountPriceShow == null)?"<null>":this.itemDiscountPriceShow));
+        sb.append(((this.itemDiscountPriceShow == null) ? "<null>" : this.itemDiscountPriceShow));
         sb.append(',');
         sb.append("itemPriceShow");
         sb.append('=');
-        sb.append(((this.itemPriceShow == null)?"<null>":this.itemPriceShow));
+        sb.append(((this.itemPriceShow == null) ? "<null>" : this.itemPriceShow));
         sb.append(',');
         sb.append("shopUrl");
         sb.append('=');
-        sb.append(((this.shopUrl == null)?"<null>":this.shopUrl));
+        sb.append(((this.shopUrl == null) ? "<null>" : this.shopUrl));
         sb.append(',');
         sb.append("itemInstallment");
         sb.append('=');
-        sb.append(((this.itemInstallment == null)?"<null>":this.itemInstallment));
+        sb.append(((this.itemInstallment == null) ? "<null>" : this.itemInstallment));
         sb.append(',');
         sb.append("itemId");
         sb.append('=');
-        sb.append(((this.itemId == null)?"<null>":this.itemId));
+        sb.append(((this.itemId == null) ? "<null>" : this.itemId));
         sb.append(',');
         sb.append("catId");
         sb.append('=');
-        sb.append(((this.catId == null)?"<null>":this.catId));
+        sb.append(((this.catId == null) ? "<null>" : this.catId));
         sb.append(',');
         sb.append("categoryLv3Name");
         sb.append('=');
-        sb.append(((this.categoryLv3Name == null)?"<null>":this.categoryLv3Name));
+        sb.append(((this.categoryLv3Name == null) ? "<null>" : this.categoryLv3Name));
         sb.append(',');
         sb.append("itemReviews");
         sb.append('=');
-        sb.append(((this.itemReviews == null)?"<null>":this.itemReviews));
+        sb.append(((this.itemReviews == null) ? "<null>" : this.itemReviews));
         sb.append(',');
         sb.append("mainTitle");
         sb.append('=');
-        sb.append(((this.mainTitle == null)?"<null>":this.mainTitle));
+        sb.append(((this.mainTitle == null) ? "<null>" : this.mainTitle));
         sb.append(',');
         sb.append("brandId");
         sb.append('=');
-        sb.append(((this.brandId == null)?"<null>":this.brandId));
+        sb.append(((this.brandId == null) ? "<null>" : this.brandId));
         sb.append(',');
         sb.append("getTbc");
         sb.append('=');
-        sb.append(((this.getTbc == null)?"<null>":this.getTbc));
+        sb.append(((this.getTbc == null) ? "<null>" : this.getTbc));
         sb.append(',');
         sb.append("currencyFlag");
         sb.append('=');
-        sb.append(((this.currencyFlag == null)?"<null>":this.currencyFlag));
+        sb.append(((this.currencyFlag == null) ? "<null>" : this.currencyFlag));
         sb.append(',');
         sb.append("itemPrice");
         sb.append('=');
-        sb.append(((this.itemPrice == null)?"<null>":this.itemPrice));
+        sb.append(((this.itemPrice == null) ? "<null>" : this.itemPrice));
         sb.append(',');
         sb.append("location");
         sb.append('=');
-        sb.append(((this.location == null)?"<null>":this.location));
+        sb.append(((this.location == null) ? "<null>" : this.location));
         sb.append(',');
         sb.append("itemUrl");
         sb.append('=');
-        sb.append(((this.itemUrl == null)?"<null>":this.itemUrl));
+        sb.append(((this.itemUrl == null) ? "<null>" : this.itemUrl));
         sb.append(',');
         sb.append("additionalProperties");
         sb.append('=');
-        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
+        sb.append(((this.additionalProperties == null) ? "<null>" : this.additionalProperties));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -1110,55 +1056,55 @@ public class Result {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.matchType == null)? 0 :this.matchType.hashCode()));
-        result = ((result* 31)+((this.clickTrackInfo == null)? 0 :this.clickTrackInfo.hashCode()));
-        result = ((result* 31)+((this.express == null)? 0 :this.express.hashCode()));
-        result = ((result* 31)+((this.itemWantedCnt == null)? 0 :this.itemWantedCnt.hashCode()));
-        result = ((result* 31)+((this.promotionTag == null)? 0 :this.promotionTag.hashCode()));
-        result = ((result* 31)+((this.shopNameLocal == null)? 0 :this.shopNameLocal.hashCode()));
-        result = ((result* 31)+((this.type == null)? 0 :this.type.hashCode()));
-        result = ((result* 31)+((this.stockAvailable == null)? 0 :this.stockAvailable.hashCode()));
-        result = ((result* 31)+((this.itemImg == null)? 0 :this.itemImg.hashCode()));
-        result = ((result* 31)+((this.sellerId == null)? 0 :this.sellerId.hashCode()));
-        result = ((result* 31)+((this.itemDiscountPrice == null)? 0 :this.itemDiscountPrice.hashCode()));
-        result = ((result* 31)+((this.isGc == null)? 0 :this.isGc.hashCode()));
-        result = ((result* 31)+((this.shopId == null)? 0 :this.shopId.hashCode()));
-        result = ((result* 31)+((this.isOfficialStore == null)? 0 :this.isOfficialStore.hashCode()));
-        result = ((result* 31)+((this.skuId == null)? 0 :this.skuId.hashCode()));
-        result = ((result* 31)+((this.isSoldByLazada == null)? 0 :this.isSoldByLazada.hashCode()));
-        result = ((result* 31)+((this.isCertified == null)? 0 :this.isCertified.hashCode()));
-        result = ((result* 31)+((this.shopLogo == null)? 0 :this.shopLogo.hashCode()));
-        result = ((result* 31)+((this.itemDiscountPriceShow == null)? 0 :this.itemDiscountPriceShow.hashCode()));
-        result = ((result* 31)+((this.shopUrl == null)? 0 :this.shopUrl.hashCode()));
-        result = ((result* 31)+((this.itemId == null)? 0 :this.itemId.hashCode()));
-        result = ((result* 31)+((this.catId == null)? 0 :this.catId.hashCode()));
-        result = ((result* 31)+((this.itemReviews == null)? 0 :this.itemReviews.hashCode()));
-        result = ((result* 31)+((this.brandId == null)? 0 :this.brandId.hashCode()));
-        result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
-        result = ((result* 31)+((this.itemWantedStr == null)? 0 :this.itemWantedStr.hashCode()));
-        result = ((result* 31)+((this.itemTitle == null)? 0 :this.itemTitle.hashCode()));
-        result = ((result* 31)+((this.itemSoldCnt == null)? 0 :this.itemSoldCnt.hashCode()));
-        result = ((result* 31)+((this.extendedItemInfo == null)? 0 :this.extendedItemInfo.hashCode()));
-        result = ((result* 31)+((this.itemDiscount == null)? 0 :this.itemDiscount.hashCode()));
-        result = ((result* 31)+((this.itemRegion == null)? 0 :this.itemRegion.hashCode()));
-        result = ((result* 31)+((this.itemRatingScore == null)? 0 :this.itemRatingScore.hashCode()));
-        result = ((result* 31)+((this.itemDiscountRaw == null)? 0 :this.itemDiscountRaw.hashCode()));
-        result = ((result* 31)+((this.currency == null)? 0 :this.currency.hashCode()));
-        result = ((result* 31)+((this.auctionType == null)? 0 :this.auctionType.hashCode()));
-        result = ((result* 31)+((this.idStr == null)? 0 :this.idStr.hashCode()));
-        result = ((result* 31)+((this.catIdLv1 == null)? 0 :this.catIdLv1 .hashCode()));
-        result = ((result* 31)+((this.shopNameEn == null)? 0 :this.shopNameEn.hashCode()));
-        result = ((result* 31)+((this.trackInfo == null)? 0 :this.trackInfo.hashCode()));
-        result = ((result* 31)+((this.center == null)? 0 :this.center.hashCode()));
-        result = ((result* 31)+((this.itemPriceShow == null)? 0 :this.itemPriceShow.hashCode()));
-        result = ((result* 31)+((this.itemInstallment == null)? 0 :this.itemInstallment.hashCode()));
-        result = ((result* 31)+((this.categoryLv3Name == null)? 0 :this.categoryLv3Name.hashCode()));
-        result = ((result* 31)+((this.mainTitle == null)? 0 :this.mainTitle.hashCode()));
-        result = ((result* 31)+((this.getTbc == null)? 0 :this.getTbc.hashCode()));
-        result = ((result* 31)+((this.currencyFlag == null)? 0 :this.currencyFlag.hashCode()));
-        result = ((result* 31)+((this.itemPrice == null)? 0 :this.itemPrice.hashCode()));
-        result = ((result* 31)+((this.location == null)? 0 :this.location.hashCode()));
-        result = ((result* 31)+((this.itemUrl == null)? 0 :this.itemUrl.hashCode()));
+        result = ((result * 31) + ((this.matchType == null) ? 0 : this.matchType.hashCode()));
+        result = ((result * 31) + ((this.clickTrackInfo == null) ? 0 : this.clickTrackInfo.hashCode()));
+        result = ((result * 31) + ((this.express == null) ? 0 : this.express.hashCode()));
+        result = ((result * 31) + ((this.itemWantedCnt == null) ? 0 : this.itemWantedCnt.hashCode()));
+        result = ((result * 31) + ((this.promotionTag == null) ? 0 : this.promotionTag.hashCode()));
+        result = ((result * 31) + ((this.shopNameLocal == null) ? 0 : this.shopNameLocal.hashCode()));
+        result = ((result * 31) + ((this.type == null) ? 0 : this.type.hashCode()));
+        result = ((result * 31) + ((this.stockAvailable == null) ? 0 : this.stockAvailable.hashCode()));
+        result = ((result * 31) + ((this.itemImg == null) ? 0 : this.itemImg.hashCode()));
+        result = ((result * 31) + ((this.sellerId == null) ? 0 : this.sellerId.hashCode()));
+        result = ((result * 31) + ((this.itemDiscountPrice == null) ? 0 : this.itemDiscountPrice.hashCode()));
+        result = ((result * 31) + ((this.isGc == null) ? 0 : this.isGc.hashCode()));
+        result = ((result * 31) + ((this.shopId == null) ? 0 : this.shopId.hashCode()));
+        result = ((result * 31) + ((this.isOfficialStore == null) ? 0 : this.isOfficialStore.hashCode()));
+        result = ((result * 31) + ((this.skuId == null) ? 0 : this.skuId.hashCode()));
+        result = ((result * 31) + ((this.isSoldByLazada == null) ? 0 : this.isSoldByLazada.hashCode()));
+        result = ((result * 31) + ((this.isCertified == null) ? 0 : this.isCertified.hashCode()));
+        result = ((result * 31) + ((this.shopLogo == null) ? 0 : this.shopLogo.hashCode()));
+        result = ((result * 31) + ((this.itemDiscountPriceShow == null) ? 0 : this.itemDiscountPriceShow.hashCode()));
+        result = ((result * 31) + ((this.shopUrl == null) ? 0 : this.shopUrl.hashCode()));
+        result = ((result * 31) + ((this.itemId == null) ? 0 : this.itemId.hashCode()));
+        result = ((result * 31) + ((this.catId == null) ? 0 : this.catId.hashCode()));
+        result = ((result * 31) + ((this.itemReviews == null) ? 0 : this.itemReviews.hashCode()));
+        result = ((result * 31) + ((this.brandId == null) ? 0 : this.brandId.hashCode()));
+        result = ((result * 31) + ((this.additionalProperties == null) ? 0 : this.additionalProperties.hashCode()));
+        result = ((result * 31) + ((this.itemWantedStr == null) ? 0 : this.itemWantedStr.hashCode()));
+        result = ((result * 31) + ((this.itemTitle == null) ? 0 : this.itemTitle.hashCode()));
+        result = ((result * 31) + ((this.itemSoldCnt == null) ? 0 : this.itemSoldCnt.hashCode()));
+        result = ((result * 31) + ((this.extendedItemInfo == null) ? 0 : this.extendedItemInfo.hashCode()));
+        result = ((result * 31) + ((this.itemDiscount == null) ? 0 : this.itemDiscount.hashCode()));
+        result = ((result * 31) + ((this.itemRegion == null) ? 0 : this.itemRegion.hashCode()));
+        result = ((result * 31) + ((this.itemRatingScore == null) ? 0 : this.itemRatingScore.hashCode()));
+        result = ((result * 31) + ((this.itemDiscountRaw == null) ? 0 : this.itemDiscountRaw.hashCode()));
+        result = ((result * 31) + ((this.currency == null) ? 0 : this.currency.hashCode()));
+        result = ((result * 31) + ((this.auctionType == null) ? 0 : this.auctionType.hashCode()));
+        result = ((result * 31) + ((this.idStr == null) ? 0 : this.idStr.hashCode()));
+        result = ((result * 31) + ((this.catIdLv1 == null) ? 0 : this.catIdLv1.hashCode()));
+        result = ((result * 31) + ((this.shopNameEn == null) ? 0 : this.shopNameEn.hashCode()));
+        result = ((result * 31) + ((this.trackInfo == null) ? 0 : this.trackInfo.hashCode()));
+        result = ((result * 31) + ((this.center == null) ? 0 : this.center.hashCode()));
+        result = ((result * 31) + ((this.itemPriceShow == null) ? 0 : this.itemPriceShow.hashCode()));
+        result = ((result * 31) + ((this.itemInstallment == null) ? 0 : this.itemInstallment.hashCode()));
+        result = ((result * 31) + ((this.categoryLv3Name == null) ? 0 : this.categoryLv3Name.hashCode()));
+        result = ((result * 31) + ((this.mainTitle == null) ? 0 : this.mainTitle.hashCode()));
+        result = ((result * 31) + ((this.getTbc == null) ? 0 : this.getTbc.hashCode()));
+        result = ((result * 31) + ((this.currencyFlag == null) ? 0 : this.currencyFlag.hashCode()));
+        result = ((result * 31) + ((this.itemPrice == null) ? 0 : this.itemPrice.hashCode()));
+        result = ((result * 31) + ((this.location == null) ? 0 : this.location.hashCode()));
+        result = ((result * 31) + ((this.itemUrl == null) ? 0 : this.itemUrl.hashCode()));
         return result;
     }
 
@@ -1171,7 +1117,7 @@ public class Result {
             return false;
         }
         Result rhs = ((Result) other);
-        return ((((((((((((((((((((((((((((((((((((((((((((((((((this.matchType == rhs.matchType)||((this.matchType!= null)&&this.matchType.equals(rhs.matchType)))&&((this.clickTrackInfo == rhs.clickTrackInfo)||((this.clickTrackInfo!= null)&&this.clickTrackInfo.equals(rhs.clickTrackInfo))))&&((this.express == rhs.express)||((this.express!= null)&&this.express.equals(rhs.express))))&&((this.itemWantedCnt == rhs.itemWantedCnt)||((this.itemWantedCnt!= null)&&this.itemWantedCnt.equals(rhs.itemWantedCnt))))&&((this.promotionTag == rhs.promotionTag)||((this.promotionTag!= null)&&this.promotionTag.equals(rhs.promotionTag))))&&((this.shopNameLocal == rhs.shopNameLocal)||((this.shopNameLocal!= null)&&this.shopNameLocal.equals(rhs.shopNameLocal))))&&((this.type == rhs.type)||((this.type!= null)&&this.type.equals(rhs.type))))&&((this.stockAvailable == rhs.stockAvailable)||((this.stockAvailable!= null)&&this.stockAvailable.equals(rhs.stockAvailable))))&&((this.itemImg == rhs.itemImg)||((this.itemImg!= null)&&this.itemImg.equals(rhs.itemImg))))&&((this.sellerId == rhs.sellerId)||((this.sellerId!= null)&&this.sellerId.equals(rhs.sellerId))))&&((this.itemDiscountPrice == rhs.itemDiscountPrice)||((this.itemDiscountPrice!= null)&&this.itemDiscountPrice.equals(rhs.itemDiscountPrice))))&&((this.isGc == rhs.isGc)||((this.isGc!= null)&&this.isGc.equals(rhs.isGc))))&&((this.shopId == rhs.shopId)||((this.shopId!= null)&&this.shopId.equals(rhs.shopId))))&&((this.isOfficialStore == rhs.isOfficialStore)||((this.isOfficialStore!= null)&&this.isOfficialStore.equals(rhs.isOfficialStore))))&&((this.skuId == rhs.skuId)||((this.skuId!= null)&&this.skuId.equals(rhs.skuId))))&&((this.isSoldByLazada == rhs.isSoldByLazada)||((this.isSoldByLazada!= null)&&this.isSoldByLazada.equals(rhs.isSoldByLazada))))&&((this.isCertified == rhs.isCertified)||((this.isCertified!= null)&&this.isCertified.equals(rhs.isCertified))))&&((this.shopLogo == rhs.shopLogo)||((this.shopLogo!= null)&&this.shopLogo.equals(rhs.shopLogo))))&&((this.itemDiscountPriceShow == rhs.itemDiscountPriceShow)||((this.itemDiscountPriceShow!= null)&&this.itemDiscountPriceShow.equals(rhs.itemDiscountPriceShow))))&&((this.shopUrl == rhs.shopUrl)||((this.shopUrl!= null)&&this.shopUrl.equals(rhs.shopUrl))))&&((this.itemId == rhs.itemId)||((this.itemId!= null)&&this.itemId.equals(rhs.itemId))))&&((this.catId == rhs.catId)||((this.catId!= null)&&this.catId.equals(rhs.catId))))&&((this.itemReviews == rhs.itemReviews)||((this.itemReviews!= null)&&this.itemReviews.equals(rhs.itemReviews))))&&((this.brandId == rhs.brandId)||((this.brandId!= null)&&this.brandId.equals(rhs.brandId))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.itemWantedStr == rhs.itemWantedStr)||((this.itemWantedStr!= null)&&this.itemWantedStr.equals(rhs.itemWantedStr))))&&((this.itemTitle == rhs.itemTitle)||((this.itemTitle!= null)&&this.itemTitle.equals(rhs.itemTitle))))&&((this.itemSoldCnt == rhs.itemSoldCnt)||((this.itemSoldCnt!= null)&&this.itemSoldCnt.equals(rhs.itemSoldCnt))))&&((this.extendedItemInfo == rhs.extendedItemInfo)||((this.extendedItemInfo!= null)&&this.extendedItemInfo.equals(rhs.extendedItemInfo))))&&((this.itemDiscount == rhs.itemDiscount)||((this.itemDiscount!= null)&&this.itemDiscount.equals(rhs.itemDiscount))))&&((this.itemRegion == rhs.itemRegion)||((this.itemRegion!= null)&&this.itemRegion.equals(rhs.itemRegion))))&&((this.itemRatingScore == rhs.itemRatingScore)||((this.itemRatingScore!= null)&&this.itemRatingScore.equals(rhs.itemRatingScore))))&&((this.itemDiscountRaw == rhs.itemDiscountRaw)||((this.itemDiscountRaw!= null)&&this.itemDiscountRaw.equals(rhs.itemDiscountRaw))))&&((this.currency == rhs.currency)||((this.currency!= null)&&this.currency.equals(rhs.currency))))&&((this.auctionType == rhs.auctionType)||((this.auctionType!= null)&&this.auctionType.equals(rhs.auctionType))))&&((this.idStr == rhs.idStr)||((this.idStr!= null)&&this.idStr.equals(rhs.idStr))))&&((this.catIdLv1 == rhs.catIdLv1)||((this.catIdLv1 != null)&&this.catIdLv1 .equals(rhs.catIdLv1))))&&((this.shopNameEn == rhs.shopNameEn)||((this.shopNameEn!= null)&&this.shopNameEn.equals(rhs.shopNameEn))))&&((this.trackInfo == rhs.trackInfo)||((this.trackInfo!= null)&&this.trackInfo.equals(rhs.trackInfo))))&&((this.center == rhs.center)||((this.center!= null)&&this.center.equals(rhs.center))))&&((this.itemPriceShow == rhs.itemPriceShow)||((this.itemPriceShow!= null)&&this.itemPriceShow.equals(rhs.itemPriceShow))))&&((this.itemInstallment == rhs.itemInstallment)||((this.itemInstallment!= null)&&this.itemInstallment.equals(rhs.itemInstallment))))&&((this.categoryLv3Name == rhs.categoryLv3Name)||((this.categoryLv3Name!= null)&&this.categoryLv3Name.equals(rhs.categoryLv3Name))))&&((this.mainTitle == rhs.mainTitle)||((this.mainTitle!= null)&&this.mainTitle.equals(rhs.mainTitle))))&&((this.getTbc == rhs.getTbc)||((this.getTbc!= null)&&this.getTbc.equals(rhs.getTbc))))&&((this.currencyFlag == rhs.currencyFlag)||((this.currencyFlag!= null)&&this.currencyFlag.equals(rhs.currencyFlag))))&&((this.itemPrice == rhs.itemPrice)||((this.itemPrice!= null)&&this.itemPrice.equals(rhs.itemPrice))))&&((this.location == rhs.location)||((this.location!= null)&&this.location.equals(rhs.location))))&&((this.itemUrl == rhs.itemUrl)||((this.itemUrl!= null)&&this.itemUrl.equals(rhs.itemUrl))));
+        return ((((((((((((((((((((((((((((((((((((((((((((((((((this.matchType == rhs.matchType) || ((this.matchType != null) && this.matchType.equals(rhs.matchType))) && ((this.clickTrackInfo == rhs.clickTrackInfo) || ((this.clickTrackInfo != null) && this.clickTrackInfo.equals(rhs.clickTrackInfo)))) && ((this.express == rhs.express) || ((this.express != null) && this.express.equals(rhs.express)))) && ((this.itemWantedCnt == rhs.itemWantedCnt) || ((this.itemWantedCnt != null) && this.itemWantedCnt.equals(rhs.itemWantedCnt)))) && ((this.promotionTag == rhs.promotionTag) || ((this.promotionTag != null) && this.promotionTag.equals(rhs.promotionTag)))) && ((this.shopNameLocal == rhs.shopNameLocal) || ((this.shopNameLocal != null) && this.shopNameLocal.equals(rhs.shopNameLocal)))) && ((this.type == rhs.type) || ((this.type != null) && this.type.equals(rhs.type)))) && ((this.stockAvailable == rhs.stockAvailable) || ((this.stockAvailable != null) && this.stockAvailable.equals(rhs.stockAvailable)))) && ((this.itemImg == rhs.itemImg) || ((this.itemImg != null) && this.itemImg.equals(rhs.itemImg)))) && ((this.sellerId == rhs.sellerId) || ((this.sellerId != null) && this.sellerId.equals(rhs.sellerId)))) && ((this.itemDiscountPrice == rhs.itemDiscountPrice) || ((this.itemDiscountPrice != null) && this.itemDiscountPrice.equals(rhs.itemDiscountPrice)))) && ((this.isGc == rhs.isGc) || ((this.isGc != null) && this.isGc.equals(rhs.isGc)))) && ((this.shopId == rhs.shopId) || ((this.shopId != null) && this.shopId.equals(rhs.shopId)))) && ((this.isOfficialStore == rhs.isOfficialStore) || ((this.isOfficialStore != null) && this.isOfficialStore.equals(rhs.isOfficialStore)))) && ((this.skuId == rhs.skuId) || ((this.skuId != null) && this.skuId.equals(rhs.skuId)))) && ((this.isSoldByLazada == rhs.isSoldByLazada) || ((this.isSoldByLazada != null) && this.isSoldByLazada.equals(rhs.isSoldByLazada)))) && ((this.isCertified == rhs.isCertified) || ((this.isCertified != null) && this.isCertified.equals(rhs.isCertified)))) && ((this.shopLogo == rhs.shopLogo) || ((this.shopLogo != null) && this.shopLogo.equals(rhs.shopLogo)))) && ((this.itemDiscountPriceShow == rhs.itemDiscountPriceShow) || ((this.itemDiscountPriceShow != null) && this.itemDiscountPriceShow.equals(rhs.itemDiscountPriceShow)))) && ((this.shopUrl == rhs.shopUrl) || ((this.shopUrl != null) && this.shopUrl.equals(rhs.shopUrl)))) && ((this.itemId == rhs.itemId) || ((this.itemId != null) && this.itemId.equals(rhs.itemId)))) && ((this.catId == rhs.catId) || ((this.catId != null) && this.catId.equals(rhs.catId)))) && ((this.itemReviews == rhs.itemReviews) || ((this.itemReviews != null) && this.itemReviews.equals(rhs.itemReviews)))) && ((this.brandId == rhs.brandId) || ((this.brandId != null) && this.brandId.equals(rhs.brandId)))) && ((this.additionalProperties == rhs.additionalProperties) || ((this.additionalProperties != null) && this.additionalProperties.equals(rhs.additionalProperties)))) && ((this.itemWantedStr == rhs.itemWantedStr) || ((this.itemWantedStr != null) && this.itemWantedStr.equals(rhs.itemWantedStr)))) && ((this.itemTitle == rhs.itemTitle) || ((this.itemTitle != null) && this.itemTitle.equals(rhs.itemTitle)))) && ((this.itemSoldCnt == rhs.itemSoldCnt) || ((this.itemSoldCnt != null) && this.itemSoldCnt.equals(rhs.itemSoldCnt)))) && ((this.extendedItemInfo == rhs.extendedItemInfo) || ((this.extendedItemInfo != null) && this.extendedItemInfo.equals(rhs.extendedItemInfo)))) && ((this.itemDiscount == rhs.itemDiscount) || ((this.itemDiscount != null) && this.itemDiscount.equals(rhs.itemDiscount)))) && ((this.itemRegion == rhs.itemRegion) || ((this.itemRegion != null) && this.itemRegion.equals(rhs.itemRegion)))) && ((this.itemRatingScore == rhs.itemRatingScore) || ((this.itemRatingScore != null) && this.itemRatingScore.equals(rhs.itemRatingScore)))) && ((this.itemDiscountRaw == rhs.itemDiscountRaw) || ((this.itemDiscountRaw != null) && this.itemDiscountRaw.equals(rhs.itemDiscountRaw)))) && ((this.currency == rhs.currency) || ((this.currency != null) && this.currency.equals(rhs.currency)))) && ((this.auctionType == rhs.auctionType) || ((this.auctionType != null) && this.auctionType.equals(rhs.auctionType)))) && ((this.idStr == rhs.idStr) || ((this.idStr != null) && this.idStr.equals(rhs.idStr)))) && ((this.catIdLv1 == rhs.catIdLv1) || ((this.catIdLv1 != null) && this.catIdLv1.equals(rhs.catIdLv1)))) && ((this.shopNameEn == rhs.shopNameEn) || ((this.shopNameEn != null) && this.shopNameEn.equals(rhs.shopNameEn)))) && ((this.trackInfo == rhs.trackInfo) || ((this.trackInfo != null) && this.trackInfo.equals(rhs.trackInfo)))) && ((this.center == rhs.center) || ((this.center != null) && this.center.equals(rhs.center)))) && ((this.itemPriceShow == rhs.itemPriceShow) || ((this.itemPriceShow != null) && this.itemPriceShow.equals(rhs.itemPriceShow)))) && ((this.itemInstallment == rhs.itemInstallment) || ((this.itemInstallment != null) && this.itemInstallment.equals(rhs.itemInstallment)))) && ((this.categoryLv3Name == rhs.categoryLv3Name) || ((this.categoryLv3Name != null) && this.categoryLv3Name.equals(rhs.categoryLv3Name)))) && ((this.mainTitle == rhs.mainTitle) || ((this.mainTitle != null) && this.mainTitle.equals(rhs.mainTitle)))) && ((this.getTbc == rhs.getTbc) || ((this.getTbc != null) && this.getTbc.equals(rhs.getTbc)))) && ((this.currencyFlag == rhs.currencyFlag) || ((this.currencyFlag != null) && this.currencyFlag.equals(rhs.currencyFlag)))) && ((this.itemPrice == rhs.itemPrice) || ((this.itemPrice != null) && this.itemPrice.equals(rhs.itemPrice)))) && ((this.location == rhs.location) || ((this.location != null) && this.location.equals(rhs.location)))) && ((this.itemUrl == rhs.itemUrl) || ((this.itemUrl != null) && this.itemUrl.equals(rhs.itemUrl))));
     }
 
 }

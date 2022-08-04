@@ -23,8 +23,7 @@ public class DummyController {
         String resourceUrl = "https://dummy.restapiexample.com/api/v1/create";
 
         HttpEntity<DummyData> request = new HttpEntity<>(dummyData, headers);
-        ResponseEntity<String> response = restTemplate
-                .postForEntity(resourceUrl, request, String.class);
+        ResponseEntity<String> response = restTemplate.postForEntity(resourceUrl, request, String.class);
         return response.getBody();
     }
 }

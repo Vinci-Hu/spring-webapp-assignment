@@ -1,27 +1,22 @@
-
 package com.wenqi.bootwebdemo.model;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "atc_cnt_30d",
-    "item_id",
-    "shop_name_en",
-    "shop_name_local",
-    "shop_url",
-    "cate_name_en",
-    "trend_names",
-    "cate_name_local",
-    "shop_logo"
+        "atc_cnt_30d",
+        "item_id",
+        "shop_name_en",
+        "shop_name_local",
+        "shop_url",
+        "cate_name_en",
+        "trend_names",
+        "cate_name_local",
+        "shop_logo"
 })
 @Generated("jsonschema2pojo")
 public class ExtendedItemInfo {
@@ -203,46 +198,46 @@ public class ExtendedItemInfo {
         sb.append(ExtendedItemInfo.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("atcCnt30d");
         sb.append('=');
-        sb.append(((this.atcCnt30d == null)?"<null>":this.atcCnt30d));
+        sb.append(((this.atcCnt30d == null) ? "<null>" : this.atcCnt30d));
         sb.append(',');
         sb.append("itemId");
         sb.append('=');
-        sb.append(((this.itemId == null)?"<null>":this.itemId));
+        sb.append(((this.itemId == null) ? "<null>" : this.itemId));
         sb.append(',');
         sb.append("shopNameEn");
         sb.append('=');
-        sb.append(((this.shopNameEn == null)?"<null>":this.shopNameEn));
+        sb.append(((this.shopNameEn == null) ? "<null>" : this.shopNameEn));
         sb.append(',');
         sb.append("shopNameLocal");
         sb.append('=');
-        sb.append(((this.shopNameLocal == null)?"<null>":this.shopNameLocal));
+        sb.append(((this.shopNameLocal == null) ? "<null>" : this.shopNameLocal));
         sb.append(',');
         sb.append("shopUrl");
         sb.append('=');
-        sb.append(((this.shopUrl == null)?"<null>":this.shopUrl));
+        sb.append(((this.shopUrl == null) ? "<null>" : this.shopUrl));
         sb.append(',');
         sb.append("cateNameEn");
         sb.append('=');
-        sb.append(((this.cateNameEn == null)?"<null>":this.cateNameEn));
+        sb.append(((this.cateNameEn == null) ? "<null>" : this.cateNameEn));
         sb.append(',');
         sb.append("trendNames");
         sb.append('=');
-        sb.append(((this.trendNames == null)?"<null>":this.trendNames));
+        sb.append(((this.trendNames == null) ? "<null>" : this.trendNames));
         sb.append(',');
         sb.append("cateNameLocal");
         sb.append('=');
-        sb.append(((this.cateNameLocal == null)?"<null>":this.cateNameLocal));
+        sb.append(((this.cateNameLocal == null) ? "<null>" : this.cateNameLocal));
         sb.append(',');
         sb.append("shopLogo");
         sb.append('=');
-        sb.append(((this.shopLogo == null)?"<null>":this.shopLogo));
+        sb.append(((this.shopLogo == null) ? "<null>" : this.shopLogo));
         sb.append(',');
         sb.append("additionalProperties");
         sb.append('=');
-        sb.append(((this.additionalProperties == null)?"<null>":this.additionalProperties));
+        sb.append(((this.additionalProperties == null) ? "<null>" : this.additionalProperties));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }
@@ -252,16 +247,16 @@ public class ExtendedItemInfo {
     @Override
     public int hashCode() {
         int result = 1;
-        result = ((result* 31)+((this.itemId == null)? 0 :this.itemId.hashCode()));
-        result = ((result* 31)+((this.shopNameEn == null)? 0 :this.shopNameEn.hashCode()));
-        result = ((result* 31)+((this.cateNameLocal == null)? 0 :this.cateNameLocal.hashCode()));
-        result = ((result* 31)+((this.cateNameEn == null)? 0 :this.cateNameEn.hashCode()));
-        result = ((result* 31)+((this.shopLogo == null)? 0 :this.shopLogo.hashCode()));
-        result = ((result* 31)+((this.atcCnt30d == null)? 0 :this.atcCnt30d.hashCode()));
-        result = ((result* 31)+((this.trendNames == null)? 0 :this.trendNames.hashCode()));
-        result = ((result* 31)+((this.shopNameLocal == null)? 0 :this.shopNameLocal.hashCode()));
-        result = ((result* 31)+((this.additionalProperties == null)? 0 :this.additionalProperties.hashCode()));
-        result = ((result* 31)+((this.shopUrl == null)? 0 :this.shopUrl.hashCode()));
+        result = ((result * 31) + ((this.itemId == null) ? 0 : this.itemId.hashCode()));
+        result = ((result * 31) + ((this.shopNameEn == null) ? 0 : this.shopNameEn.hashCode()));
+        result = ((result * 31) + ((this.cateNameLocal == null) ? 0 : this.cateNameLocal.hashCode()));
+        result = ((result * 31) + ((this.cateNameEn == null) ? 0 : this.cateNameEn.hashCode()));
+        result = ((result * 31) + ((this.shopLogo == null) ? 0 : this.shopLogo.hashCode()));
+        result = ((result * 31) + ((this.atcCnt30d == null) ? 0 : this.atcCnt30d.hashCode()));
+        result = ((result * 31) + ((this.trendNames == null) ? 0 : this.trendNames.hashCode()));
+        result = ((result * 31) + ((this.shopNameLocal == null) ? 0 : this.shopNameLocal.hashCode()));
+        result = ((result * 31) + ((this.additionalProperties == null) ? 0 : this.additionalProperties.hashCode()));
+        result = ((result * 31) + ((this.shopUrl == null) ? 0 : this.shopUrl.hashCode()));
         return result;
     }
 
@@ -274,7 +269,7 @@ public class ExtendedItemInfo {
             return false;
         }
         ExtendedItemInfo rhs = ((ExtendedItemInfo) other);
-        return (((((((((((this.itemId == rhs.itemId)||((this.itemId!= null)&&this.itemId.equals(rhs.itemId)))&&((this.shopNameEn == rhs.shopNameEn)||((this.shopNameEn!= null)&&this.shopNameEn.equals(rhs.shopNameEn))))&&((this.cateNameLocal == rhs.cateNameLocal)||((this.cateNameLocal!= null)&&this.cateNameLocal.equals(rhs.cateNameLocal))))&&((this.cateNameEn == rhs.cateNameEn)||((this.cateNameEn!= null)&&this.cateNameEn.equals(rhs.cateNameEn))))&&((this.shopLogo == rhs.shopLogo)||((this.shopLogo!= null)&&this.shopLogo.equals(rhs.shopLogo))))&&((this.atcCnt30d == rhs.atcCnt30d)||((this.atcCnt30d!= null)&&this.atcCnt30d.equals(rhs.atcCnt30d))))&&((this.trendNames == rhs.trendNames)||((this.trendNames!= null)&&this.trendNames.equals(rhs.trendNames))))&&((this.shopNameLocal == rhs.shopNameLocal)||((this.shopNameLocal!= null)&&this.shopNameLocal.equals(rhs.shopNameLocal))))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.shopUrl == rhs.shopUrl)||((this.shopUrl!= null)&&this.shopUrl.equals(rhs.shopUrl))));
+        return (((((((((((this.itemId == rhs.itemId) || ((this.itemId != null) && this.itemId.equals(rhs.itemId))) && ((this.shopNameEn == rhs.shopNameEn) || ((this.shopNameEn != null) && this.shopNameEn.equals(rhs.shopNameEn)))) && ((this.cateNameLocal == rhs.cateNameLocal) || ((this.cateNameLocal != null) && this.cateNameLocal.equals(rhs.cateNameLocal)))) && ((this.cateNameEn == rhs.cateNameEn) || ((this.cateNameEn != null) && this.cateNameEn.equals(rhs.cateNameEn)))) && ((this.shopLogo == rhs.shopLogo) || ((this.shopLogo != null) && this.shopLogo.equals(rhs.shopLogo)))) && ((this.atcCnt30d == rhs.atcCnt30d) || ((this.atcCnt30d != null) && this.atcCnt30d.equals(rhs.atcCnt30d)))) && ((this.trendNames == rhs.trendNames) || ((this.trendNames != null) && this.trendNames.equals(rhs.trendNames)))) && ((this.shopNameLocal == rhs.shopNameLocal) || ((this.shopNameLocal != null) && this.shopNameLocal.equals(rhs.shopNameLocal)))) && ((this.additionalProperties == rhs.additionalProperties) || ((this.additionalProperties != null) && this.additionalProperties.equals(rhs.additionalProperties)))) && ((this.shopUrl == rhs.shopUrl) || ((this.shopUrl != null) && this.shopUrl.equals(rhs.shopUrl))));
     }
 
 }

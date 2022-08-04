@@ -9,8 +9,7 @@ import java.io.IOException;
 import java.net.URL;
 
 public class JsonUtility {
-    public static void convertJsonToJavaClass(URL inputJsonUrl, File outputJavaClassDirectory, String packageName, String javaClassName)
-            throws IOException {
+    public static void convertJsonToJavaClass(URL inputJsonUrl, File outputJavaClassDirectory, String packageName, String javaClassName) throws IOException {
         JCodeModel jcodeModel = new JCodeModel();
 
         GenerationConfig config = new DefaultGenerationConfig() {
