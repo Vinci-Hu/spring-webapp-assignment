@@ -12,19 +12,15 @@ public class HomeController {
     NameService nameService;
 
     @RequestMapping("/")
-    public ModelAndView home(){
-        //method name does not matter
-
+    public ModelAndView home() {
+        // Method name does not matter, looks at url mapping above only.
         ModelAndView mv = new ModelAndView();
-//        mv.addObject("name", myName);
         mv.setViewName("home.jsp");
-//        System.out.println("hi " + name);
-        return mv; //because we set up a suffix search in app prop file
-
+        return mv;
     }
 
     @RequestMapping("/name")
-    public ModelAndView getName(String name){
+    public ModelAndView getName(String name) {
         String newName = nameService.reverseString(name);
         ModelAndView mv = new ModelAndView();
         mv.addObject("name", newName);

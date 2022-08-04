@@ -8,11 +8,16 @@ import org.springframework.stereotype.Service;
 @Service
 public class NameService {
     @Value("${reverse-name}")
-    private boolean reverseFlag;
+    boolean reverseFlag;
     private static Logger logger = LogManager.getLogger(NameService.class);
+
+    /** Reverses a string or not controlled by a property.
+     * @return Reversed string if reverse-name property is true.
+     * Original string otherwise.
+     * */
     public String reverseString(String str){
         if (!reverseFlag){
-            logger.info("Input name "+str+" not reversed.");
+            logger.info("Input name " + str + " not reversed.");
             return str;
         }
         String nstr = "";
@@ -21,7 +26,7 @@ public class NameService {
             ch = str.charAt(i);
             nstr = ch + nstr;
         }
-        logger.info("Input name "+ str + " is reversed into "+nstr+".");
+        logger.info("Input name " + str + " is reversed into " + nstr +".");
         return nstr;
     }
 }
