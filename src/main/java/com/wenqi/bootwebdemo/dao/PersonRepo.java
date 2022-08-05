@@ -16,14 +16,14 @@ public class PersonRepo {
     private static final Logger logger = LogManager.getLogger(PersonRepo.class);
     // JDBC driver name and database URL
     @Value("${JDBC_DRIVER}")
-    String JDBC_DRIVER;
+    String jdbcDriver;
     @Value("${DB_URL}")
-    String DB_URL;
+    String dbUrl;
     //  Database credentials
     @Value("${DB_USER}")
-    String USER;
+    String user;
     @Value("${DB_PSW}")
-    String PASS;
+    String password;
 
     public List<Person> listAllPersons() {
         List<Person> personList = new ArrayList<Person>();
@@ -31,11 +31,11 @@ public class PersonRepo {
         Statement stmt = null;
         try {
             // STEP 1: Register JDBC driver
-            Class.forName(JDBC_DRIVER);
+            Class.forName(jdbcDriver);
 
             //STEP 2: Open a connection
             System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn = DriverManager.getConnection(dbUrl, user, password);
 
             //STEP 3: Execute a query
             System.out.println("Connected database successfully...");
@@ -78,17 +78,17 @@ public class PersonRepo {
         return personList;
     }
 
-    public Optional<Person> getPersonById(int aid) {
+    public Optional<Person> getPersonById(Integer aid) {
         Optional<Person> person = Optional.empty();
         Connection conn = null;
         Statement stmt = null;
         try {
             // STEP 1: Register JDBC driver
-            Class.forName(JDBC_DRIVER);
+            Class.forName(jdbcDriver);
 
             //STEP 2: Open a connection
             System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn = DriverManager.getConnection(dbUrl, user, password);
 
             //STEP 3: Execute a query
             System.out.println("Connected database successfully...");
@@ -134,11 +134,11 @@ public class PersonRepo {
         Statement stmt = null;
         try {
             // STEP 1: Register JDBC driver
-            Class.forName(JDBC_DRIVER);
+            Class.forName(jdbcDriver);
 
             //STEP 2: Open a connection
             System.out.println("Connecting to database...");
-            conn = DriverManager.getConnection(DB_URL, USER, PASS);
+            conn = DriverManager.getConnection(dbUrl, user, password);
 
             //STEP 3: Execute a query
             System.out.println("Connected database successfully...");

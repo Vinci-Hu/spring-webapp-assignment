@@ -22,7 +22,7 @@ public class PersonController {
     }
 
     @GetMapping("/person/{aid}")
-    public String getPersonById(@PathVariable("aid") int aid) {
+    public String getPersonById(@PathVariable("aid") Integer aid) {
         String speech = null;
         try {
             speech = personService.getPersonById(aid);

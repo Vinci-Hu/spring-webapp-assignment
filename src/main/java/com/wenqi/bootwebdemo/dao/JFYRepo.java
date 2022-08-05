@@ -17,7 +17,9 @@ public class JFYRepo {
     private static final Logger logger = LogManager.getLogger(JFYRepo.class);
     @Autowired
     JdbcTemplate template;
-    private final String filePath = "target/";
+    @Autowired
+    ObjectMapper jsonObjMapper;
+    private static final String FILE_PATH = "target/";
 
     public void writeToDbWithTemplate(List<Item> items) {
         for (Item item : items) {
@@ -35,10 +37,10 @@ public class JFYRepo {
     }
 
     public void writeToJson(List<Item> items) {
-        ObjectMapper objectMapper = new ObjectMapper();
         try {
-            objectMapper.writeValue(new File(filePath + "item_list.json"), items);
+            jsonObjMapper.writeValue(new File(FILE_PATH + "item_list.json"), items);
         } catch (IOException e) {
+            logger.warn("JFY response write to JSON failed.");
             throw new RuntimeException(e);
         }
     }

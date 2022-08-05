@@ -28,10 +28,16 @@ public class PersonService {
         return personList;
     }
 
-    public String getPersonById(int aid) throws PersonNotFoundException {
+    public String getPersonById(Integer aid) throws PersonNotFoundException {
+        // todo: changed type to Integer, handle null values?
         String speech = "";
+        if (aid.equals(null)){
+            logger.warn("Person id passed in is not valid.");
+            throw new PersonNotFoundException();
+        }
         Optional<Person> oPerson = personRepo.getPersonById(aid);
         if (!oPerson.isPresent()) {
+            logger.warn("Cannot find person by id provided.");
             throw new PersonNotFoundException();
         }
         logger.info("Person " + aid + " is retrieved.");
