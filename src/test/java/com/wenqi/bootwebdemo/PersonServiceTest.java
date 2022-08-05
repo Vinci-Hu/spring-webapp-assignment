@@ -28,13 +28,13 @@ public class PersonServiceTest {
 
         //Mock personRepo behavior
         Person person = new Person(1, "Yunlong", "Chinese");
-        when(personRepo.getPersonById(1)).thenReturn(Optional.of(person));
+        when(personRepo.getPersonByIdWithTemplate(1)).thenReturn(Optional.of(person));
 
         String result = personService.getPersonById(1);
 
         assertThat(result).isEqualTo("Ni hao! Wo shi Yunlong.");
 
-        verify(personRepo).getPersonById(1);
+        verify(personRepo).getPersonByIdWithTemplate(1);
     }
 
     @Test
@@ -43,12 +43,12 @@ public class PersonServiceTest {
 
         Optional<Person> person = Optional.empty();
 
-        when(personRepo.getPersonById(100)).thenReturn(person);
+        when(personRepo.getPersonByIdWithTemplate(100)).thenReturn(person);
 
         assertThrows(PersonNotFoundException.class, () -> {
             String result = personService.getPersonById(100);
         });
 
-        verify(personRepo).getPersonById(100);
+        verify(personRepo).getPersonByIdWithTemplate(100);
     }
 }

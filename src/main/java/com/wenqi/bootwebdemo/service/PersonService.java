@@ -23,33 +23,35 @@ public class PersonService {
     }
 
     public List<Person> getAllPersons() {
-        List<Person> personList = personRepo.listAllPersons();
+        List<Person> personList = personRepo.getPersonListWithTemplate();
         logger.info("Person list generated.");
         return personList;
     }
 
     public String getPersonById(Integer aid) throws PersonNotFoundException {
-        // todo: changed type to Integer, handle null values?
         String speech = "";
         if (aid.equals(null)){
             logger.warn("Person id passed in is not valid.");
             throw new PersonNotFoundException();
         }
-        Optional<Person> oPerson = personRepo.getPersonById(aid);
+        Optional<Person> oPerson = personRepo.getPersonByIdWithTemplate(aid);
         if (!oPerson.isPresent()) {
             logger.warn("Cannot find person by id provided.");
             throw new PersonNotFoundException();
         }
         logger.info("Person " + aid + " is retrieved.");
         speech = oPerson.get().speak();
+//        Person person = personRepo.getPersonByIdWithTemplate(aid);
+//        speech = person.speak();
         return speech;
     }
 
     public PersonResponseDTO addPersonService(Person person) {
-        boolean callRepoSuccess = personRepo.addPerson(person);
+        boolean callRepoSuccess = personRepo.createPersonWithTemplate(person);
         if (callRepoSuccess) {
             return new PersonResponseDTO("success", person, person.speak());
         } else {
+            logger.warn("Person not added in database!");
             return new PersonResponseDTO("failed", person, "?");
         }
     }
