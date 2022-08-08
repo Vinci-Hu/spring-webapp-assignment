@@ -4,7 +4,6 @@ import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.wenqi.bootwebdemo.service.JFYService;
-import com.wenqi.bootwebdemo.service.PersonService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,14 +22,13 @@ import static java.util.stream.Collectors.joining;
 // Used to call external API
 @RestController
 public class JFYController {
+    private static final Logger logger = LogManager.getLogger(JFYController.class);
     @Autowired
     JFYService jfyService;
 
-    private static final Logger logger = LogManager.getLogger(JFYController.class);
-
     @GetMapping(value = "/jfy")
     public String getClient(@RequestParam int appid, @RequestParam int scene, @RequestParam int user_id, @RequestParam int pageSize) throws Exception {
-        String prefix = "https://grecom.taobao.com/recommend?";
+        String prefix = "";
         String suffix = "&language=en-SG&size=15&region_id=ph&need_cross_module_dedup=false";
         Map<String, String> requestParams = new HashMap<>();
         requestParams.put("appid", String.valueOf(appid));

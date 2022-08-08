@@ -15,23 +15,16 @@ import java.util.List;
 @Repository
 public class JFYRepo {
     private static final Logger logger = LogManager.getLogger(JFYRepo.class);
+    private static final String FILE_PATH = "target/";
     @Autowired
     JdbcTemplate template;
     @Autowired
     ObjectMapper jsonObjMapper;
-    private static final String FILE_PATH = "target/";
 
     public void writeToDbWithTemplate(List<Item> items) {
         for (Item item : items) {
             String sql = "INSERT INTO ITEM VALUES(?,?,?,?,?,?,?)";
-            template.update(sql,
-                    item.getItemId(),
-                    item.getItemPrice(),
-                    item.getItemSoldCnt(),
-                    item.getItemTitle(),
-                    item.getItemUrl(),
-                    item.getShopId(),
-                    item.getStockAvailable());
+            template.update(sql, item.getItemId(), item.getItemPrice(), item.getItemSoldCnt(), item.getItemTitle(), item.getItemUrl(), item.getShopId(), item.getStockAvailable());
         }
         logger.info("Inserted records via template");
     }
