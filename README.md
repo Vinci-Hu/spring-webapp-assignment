@@ -11,7 +11,7 @@
 8. Connect spring application to DB and perform basic CRUD operations
 
 ---
-# 4 separate modules:
+# 5 modules:
 ### Basic dependencies:
 * Spring Boot
 * Spring Web
@@ -79,7 +79,7 @@ model/DummyData
 * jackson-databind
 * lombok
 
-## 3. JFY (external HTTP url call)
+## 3. JFY module(external HTTP url call)
 ### Objectives
 * Call an external HTTP url and get data.
 * Wrap with own GET api.
@@ -127,7 +127,7 @@ model/Item
 * unirest
 * jsonschema2pojo
 
-## 4. Person (own get and post apis)
+## 4. Person module(own get and post apis)
 ### Objectives
 * Create own GET api and POST api
 * Try to handle exceptions
@@ -173,9 +173,36 @@ exception/PersonNotFoundException
 ### Additional dependencies
 none
 
+## 5. MultiThreadCall module(explore on multi threading)
+### Objectives
+* Open concurrent threads and make api call
+* Create a list of response objects
+
+### Functionalities
+* ("/multi") calls JFY in 3 concurrent threads (thread_cnt property won't work though)
+
+| appid | scene | user_id | pageSize | thread_cnt |
+|-------|-------|---------|----------|------------|
+| 31576 | 21201 | 7263422 | 36       | 3          |
+* returns the list of 3 responses in json
+
+### Related JAVA classes
+controller/MultiThreadCallController
+model/MultiThreadCallRequest
+model/MultiResponseDTO  
+model/MultiResult  
+model/MultiExtendedItemInfo
+
+### Additional dependencies
+* java.util.concurrent.CompletableFuture
+* ObjectMapper(in json databind)
+
 ---
 # Web app tips
 ### Default localhost url
 http://localhost:8080
 
 If it is too slow to run, try to refer to [localhost slow post](https://stackoverflow.com/questions/33289695/inetaddress-getlocalhost-slow-to-run-30-seconds) to check pc localhost settings.
+
+### About logging
+Log file is in logs/ folder

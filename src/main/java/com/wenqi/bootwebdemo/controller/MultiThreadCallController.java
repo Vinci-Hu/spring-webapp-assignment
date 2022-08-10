@@ -72,8 +72,8 @@ public class MultiThreadCallController {
     }
 
     private List<MultiResponseDTO> runMultiThread(Integer threadCnt,
-                                                   String encodedUrl,
-                                                   List<MultiResponseDTO> responseDTOList) throws ExecutionException, InterruptedException {
+                                                  String encodedUrl,
+                                                  List<MultiResponseDTO> responseDTOList) throws ExecutionException, InterruptedException {
         Runnable runnable = () -> {
             try {
                 String name = Thread.currentThread().getName();
@@ -96,6 +96,7 @@ public class MultiThreadCallController {
         combinedFuture.get();
         return responseDTOList;
     }
+
     private String encodeValue(String value) throws UnsupportedEncodingException {
         return URLEncoder.encode(value, StandardCharsets.UTF_8.toString());
     }
