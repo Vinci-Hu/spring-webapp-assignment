@@ -31,3 +31,13 @@ build/
 
 ### VS Code ###
 .vscode/
+
+.DS_Store
+
+logs/
+
+*.json
+
+out/artifacts/spring_webapp_assignment_jar/
+
+src/main/resources/META-INF/
