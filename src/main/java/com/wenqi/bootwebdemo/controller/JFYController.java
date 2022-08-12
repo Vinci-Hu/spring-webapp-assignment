@@ -28,7 +28,7 @@ public class JFYController {
 
     @GetMapping(value = "/jfy")
     public String getClient(@RequestParam int appid, @RequestParam int scene, @RequestParam int user_id, @RequestParam int pageSize) throws Exception {
-        String prefix = "https://gre2com.taobao.com/recommend?";
+        String prefix = "https://grecom.taobao.com/recommend?";
         String suffix = "&language=en-SG&size=15&region_id=ph&need_cross_module_dedup=false";
         Map<String, String> requestParams = new HashMap<>();
         requestParams.put("appid", String.valueOf(appid));
