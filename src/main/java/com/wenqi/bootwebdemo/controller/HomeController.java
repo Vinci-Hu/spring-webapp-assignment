@@ -1,13 +1,10 @@
 package com.wenqi.bootwebdemo.controller;
 
-import com.wenqi.bootwebdemo.model.DummyData;
 import com.wenqi.bootwebdemo.service.NameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
-import javax.jws.WebParam;
 
 @Controller
 public class HomeController {

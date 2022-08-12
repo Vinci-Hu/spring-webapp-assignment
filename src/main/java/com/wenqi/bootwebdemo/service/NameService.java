@@ -3,12 +3,14 @@ package com.wenqi.bootwebdemo.service;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 
 @Service
+@PropertySource(value={"application.properties"})
 public class NameService {
     private static final Logger logger = LogManager.getLogger(NameService.class);
-    @Value("${reverse-name}")
+    @Value("${reverse-name:true}")
     boolean reverseFlag;
 
     /**
