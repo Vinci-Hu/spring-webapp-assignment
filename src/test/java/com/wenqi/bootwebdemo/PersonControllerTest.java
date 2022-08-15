@@ -45,12 +45,27 @@ public class PersonControllerTest {
         verify(personService).getPersonById(1);
     }
 
+//    @Test
+//    public void testGetByIdNotFound() throws Exception {
+//        when(personService.getPersonById(10)).thenThrow(new PersonNotFoundException());
+//
+//        ResultActions result = mockMvc.perform(get("/person/10"))
+//                .andExpect(status().isNotFound());
+//
+//        verify(personService).getPersonById(10);
+//
+//    }
+
     @Test
-    public void testGetByIdNotFound() throws Exception {
+    public void testGetByIdNotFoundNew() throws Exception {
         when(personService.getPersonById(10)).thenThrow(new PersonNotFoundException());
 
-        ResultActions result = mockMvc.perform(get("/person/10"))
-                .andExpect(status().isNotFound());
+        MvcResult result = mockMvc.perform(
+                        get("/person/10"))
+                .andExpect(status().isOk())
+                .andReturn();
+        String content = result.getResponse().getContentAsString();
+        assertThat(content).isEqualTo("Oops! No person found");
 
         verify(personService).getPersonById(10);
 

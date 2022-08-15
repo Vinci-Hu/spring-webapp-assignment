@@ -51,4 +51,6 @@ public class PersonServiceTest {
 
         verify(personRepo).getPersonByIdWithTemplate(100);
     }
+
+    //todo: more tests to be written for add person and get all persons
 }
