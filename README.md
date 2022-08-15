@@ -29,6 +29,11 @@
 * Recognize localhost directories "/" and "/name".
 * Pass a name via typing `/name?name=YOURNAME` and you will be welcomed.
 * Change `reverse-name` to true in "application.properties" file to see the reversed version of your name. Otherwise, the name will be displayed normally.
+  
+```java
+@Value("${reverse-name:true}")
+boolean reverseFlag;
+```
 
 ### Related JAVA classes
 controller/HomeController  
@@ -40,7 +45,7 @@ service/NameService
 ## 2. Dummy module (external post api call)
 ### Objectives
 * Call an external post api, and wrap with own api.
-* JSON familiarization, try ObjectMapper.
+* JSON familiarization.
 * Use Postman as a tool to test out api usability.
 
 ### Functionalities
@@ -52,7 +57,6 @@ service/NameService
     "age": "30"
 }
 ```
-    Note that all fields are passed as String. 
 * If the call is success, an object like this is returned:
 ```json
 {
@@ -66,10 +70,13 @@ service/NameService
     "message": "Successfully! Record has been added."
 }
 ```
-    Note that the external dummy post api has an access frequency limit. 
-    Don't call too many times. 
-    If return is 500 Internal server error, please try again later.
-
+Note that the external dummy post api has an access frequency limit.   
+Don't call too many times.   
+If return is 500 Internal server error, please try again later.  
+Used the following to get the response:
+```java
+restTemplate.postForEntity()
+```
 ### Related JAVA classes
 controller/DummyController  
 model/DummyData
@@ -79,12 +86,13 @@ model/DummyData
 * jackson-databind
 * lombok
 
-## 3. JFY module(external HTTP url call)
+## 3. JFY module (external HTTP url call)
 ### Objectives
 * Call an external HTTP url and get data.
 * Wrap with own GET api.
 * Personalize input parameters.
 * Practice JSON-POJO conversion.
+* Try JSON ObjectMapper.
 * Familiarize Controller-Service-Repository 3 layer design.
 * Use JDBCTemplate to interact with database.
 
