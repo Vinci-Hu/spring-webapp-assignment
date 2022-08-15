@@ -1,13 +1,15 @@
 package com.wenqi.bootwebdemo.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Getter
-@Setter
+@Data
 @Builder // With this annotation, can do the following:
 //        DummyData.builder().age("").name("").build();
+@AllArgsConstructor
+@NoArgsConstructor
 public class DummyData {
     private String name;
     private String salary;
