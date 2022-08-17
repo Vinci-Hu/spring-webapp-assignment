@@ -22,7 +22,7 @@ public class JFYRepo {
     ObjectMapper jsonObjMapper;
 
     public void writeToDbWithTemplate(List<Item> items) {
-        for (Item item : items) {
+        for (Item item : items) { // batch update. don't use for loop
             String sql = "INSERT INTO ITEM VALUES(?,?,?,?,?,?,?)";
             template.update(sql, item.getItemId(), item.getItemPrice(), item.getItemSoldCnt(), item.getItemTitle(), item.getItemUrl(), item.getShopId(), item.getStockAvailable());
         }

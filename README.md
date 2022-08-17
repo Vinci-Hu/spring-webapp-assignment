@@ -214,3 +214,9 @@ If it is too slow to run, try to refer to [localhost slow post](https://stackove
 
 ### About logging
 Log file is in logs/ folder
+
+### Feedback
+cache, async  
+hsf  
+database IO no for loop  
+reduce IO operations

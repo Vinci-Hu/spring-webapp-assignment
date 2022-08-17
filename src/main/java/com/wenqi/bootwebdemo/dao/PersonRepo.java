@@ -19,7 +19,7 @@ public class PersonRepo {
     JdbcTemplate jdbcTemplate;
 
     public List<Person> getPersonListWithTemplate() {
-        String sql = "SELECT * FROM PERSON";
+        String sql = "SELECT * FROM PERSON"; // column index; sharding; range
         return jdbcTemplate.query(
                 sql,
                 new BeanPropertyRowMapper(Person.class)
